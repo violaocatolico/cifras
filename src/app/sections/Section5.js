@@ -1,19 +1,154 @@
 import React from 'react';
 import styled from 'styled-components'
-import DefaultSection from './DefaultSection';
+import  { DefaultSection } from './Components';
 import { Colors } from '../utils/colors'
 
 const SectionStyle = styled(DefaultSection)`
-  background-color: ${ Colors.yellow }
+  background-color: ${ Colors.yellow };
+  display: flex;
+
+  & .left, & .right {
+    flex: 1;
+    display: flex;
+  }
+
+  & .left {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5rem;
+    & .icon {
+      background-color: black;
+      width: 20px;
+    }
+
+    & .quote {
+      line-height: 1.6em;
+      font-size: 1.6em;
+      background-color: white;
+      width: 70%;
+      padding: 60px;
+      position: relative;
+
+      & .icon, & .icon-profile {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      
+      & .icon {
+        top: -60px;
+        background-color: black;
+        background-image: url('aspas.svg');
+        background-size: 80%;
+        border-radius: 8px;
+      }
+
+      & .icon-profile {
+        bottom: -60px;
+        align-self: flex-start;
+        background-image: url('marcio-vieira-2.webp');
+        background-size: cover;
+        border-radius: 50%;
+        right: 4rem;
+      }
+    }
+  }
+
+  & .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 5rem;
+
+    & .contactContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & .contactItem {
+        background-color: white;
+        box-shadow: 0px 13px 15px -12px #000000;
+        width: 70%;
+        margin: 10px 0;
+        padding: 14px 30px;
+        text-align: center;
+        color: black;
+        position: relative;
+
+        & .icon {
+          background-color: black;
+          width: 60px;
+          height: 60px;
+          background-size: 70%;
+          background-repeat: no-repeat;
+          background-position: center;
+          border-radius: 50%;
+          top: -7px;
+
+          &.whatsapp {
+            background-image: url('whatsapp.svg');
+            left: -40px;
+            position: absolute;
+          }
+          &.instagram {
+            background-image: url('instagram.svg');
+            right: -40px;
+            position: absolute;
+          }
+          &.youtube {
+            background-image: url('youtube.svg');
+            left: -40px;
+            position: absolute;
+          }
+        }
+      }
+    }
+
+    & h2 {
+      font-weight: bold;
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+    }
+
+  }
 `;
 
-function App() {
+const Section = () => {
 
   return (
     <SectionStyle>
-        section 5
+      <div className='left'>
+        <div className='quote'>
+          <div className='icon'></div>
+          <p className='text'>
+            Meu nome é Márcio, tenho 25 anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!
+          </p>
+          <div className='icon-profile'></div>
+        </div>
+      </div>
+      <div className='right'>
+        <div className='contactContainer'>
+          <h2>Contato</h2>
+          <a href='#' className='contactItem'>
+            <div className='icon whatsapp'></div>
+            WHATSAPP
+          </a>
+          <a href='#' className='contactItem'>
+            INSTAGRAM
+            <div className='icon instagram'></div>
+          </a>
+          <a href='#' className='contactItem'>
+            <div className='icon youtube'></div>
+            YOUTUBE
+          </a>
+        </div>
+      </div>
     </SectionStyle>
   );
 }
 
-export default App;
+export default Section;

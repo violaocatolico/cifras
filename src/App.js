@@ -4,6 +4,7 @@ import Section2 from './app/sections/Section2';
 import Section3 from './app/sections/Section3';
 import Section4 from './app/sections/Section4';
 import Section5 from './app/sections/Section5';
+import Footer from './app/sections/Footer';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
       <Section3 />
       <Section4 />
       <Section5 />
-      <footer>footer</footer>
+      <Footer />
     </main>
   );
 }

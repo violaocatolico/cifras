@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
-import DefaultSection from './DefaultSection';
-import { Colors } from '../utils/colors'
+import  { DefaultSection } from './Components';
+import { Colors } from '../utils/colors';
+import { Sizes } from '../utils/sizes';
 
 const SectionStyle = styled(DefaultSection)`
   background-image: url('marcio-vieira.png');
@@ -14,7 +15,7 @@ const SectionStyle = styled(DefaultSection)`
 
   & .overlay {
     width: 100%;
-    height: 100%;
+    height: 90vh;
     background-color: ${Colors.black};
     opacity: 0.5;
     position: absolute;
@@ -25,25 +26,18 @@ const SectionStyle = styled(DefaultSection)`
     width: 75%;
   }
 
-  & .yellow {
-    color: ${Colors.yellow};
-  }
-  & .white {
-    color: ${Colors.white};
-  }
+  & .yellow { color: ${Colors.yellow}; }
+  & .white { color: ${Colors.white}; }
 
   & h1 > * {
-    font-size: 4rem;
+    font-size: ${Sizes.bigFontSize};
     font-weight: bolder;
   }
 
-  & h2 {
-    margin-top: 25px;
-  }
-
+  & h2 { margin-top: 25px; }
 `;
 
-function App() {
+export default () => {
   return (
     <SectionStyle>
       <div className='overlay'></div>
@@ -66,5 +60,3 @@ function App() {
     </SectionStyle>
   );
 }
-
-export default App;
