@@ -1,11 +1,6 @@
 import styled from 'styled-components'
 import { Colors } from '../utils/colors'
 
- const DefaultSection = styled.section`
-  width: 100%;
-  min-height: 90vh;  
-`;
-
 const RoundedYellowButton = styled.a`
   background-color: ${Colors.yellow};
   color: white;
@@ -14,6 +9,7 @@ const RoundedYellowButton = styled.a`
   border-radius: 15px;
   width: fit-content;
   font-weight: bold;
+  text-align: center;
 `;
 
 const RoundedWhiteButton = styled.a`
@@ -23,10 +19,10 @@ const RoundedWhiteButton = styled.a`
   width: fit-content;
   font-weight: bold;
   color: ${Colors.yellow};
+  text-align: center;
 `;
 
 export {
-    DefaultSection,
     RoundedYellowButton,
     RoundedWhiteButton
 };

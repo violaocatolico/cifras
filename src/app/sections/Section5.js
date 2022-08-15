@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
-import  { DefaultSection } from './Components';
 import { Colors } from '../utils/colors'
 import { Sizes } from '../utils/sizes'
 
-const SectionStyle = styled(DefaultSection)`
+const SectionStyle = styled.section`
+  width: 100%;
+  min-height: 90vh;
   background-color: ${ Colors.yellow };
   display: flex;
   @media (max-width: ${Sizes.mediaQueryBreak2}) {

@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
-import  { DefaultSection, RoundedYellowButton, RoundedWhiteButton } from './Components';
+import  { RoundedYellowButton, RoundedWhiteButton } from './Components';
 import { Colors } from '../utils/colors';
 import { Sizes } from '../utils/sizes';
 
-const SectionStyle = styled(DefaultSection)`
+const SectionStyle = styled.section`
+  width: 100%;
+  min-height: 90vh;
   background-color: ${ Colors.black };
   display: flex;
 
@@ -73,8 +75,12 @@ const Section = () => {
             Meus amigos, este é o nosso grande e-book 11 em 1. Ele leva esse nome porque nele estão reunidos todos os nossos e-books.
           </p>
 
-          <RoundedYellowButton href="#">COMPRE AQUI O E-BOOK COMPLETO!</RoundedYellowButton>
-          <RoundedWhiteButton href="#">Confira as músicas disponíveis</RoundedWhiteButton>
+          <RoundedYellowButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+            COMPRE AQUI O E-BOOK COMPLETO!
+          </RoundedYellowButton>
+          <RoundedWhiteButton target="_blank" href="https://drive.google.com/file/d/1ZDx-IwoGsl_r5gLYmEkZZVnOC1k39_uA/view">
+            Confira as músicas disponíveis
+          </RoundedWhiteButton>
         </div>
       </div>
     </SectionStyle>

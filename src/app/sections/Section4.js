@@ -1,76 +1,78 @@
 import React from 'react';
 import styled from 'styled-components'
-import  { DefaultSection } from './Components';
+import  { RoundedYellowButton } from './Components';
 import { Colors } from '../utils/colors'
 import { Sizes } from '../utils/sizes'
 
 const ebooks = [
   {
     title: 'Músicas católicas para advento e natal',
-    link: '#',
+    link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
     image: '1.png',
   },
   {
     title: 'Músicas católicas para a quaresma',
-    link: '#',
+    link: 'https://pay.hotmart.com/P68319360J?bid=1649784445020',
     image: '2.png',
   },
   {
     title: 'Músicas católicas para a páscoa',
-    link: '#',
+    link: 'https://pay.hotmart.com/A67803816O?bid=1649784461481',
     image: '3.png',
   },
 
   {
     title: 'Músicas católicas para o tempo comum',
-    link: '#',
+    link: 'https://pay.hotmart.com/S64580532H?bid=1649784479849',
     image: '4.png',
   },
 
   {
     title: 'Músicas católicas para as partes fixas',
-    link: '#',
+    link: 'https://pay.hotmart.com/G68474939T?bid=1649784495138',
     image: '5.png',
   },
 
   {
     title: 'Músicas católicas marianas',
-    link: '#',
+    link: 'https://pay.hotmart.com/J60244445K?bid=1649784521066',
     image: '6.png',
   },
 
   {
     title: 'Músicas católicas para adoração',
-    link: '#',
+    link: 'https://pay.hotmart.com/A61419780H?bid=1660538952946',
     image: '7.png',
   },
 
   {
     title: 'Músicas católicas mais conhecidas',
-    link: '#',
+    link: 'https://pay.hotmart.com/X58232470X?bid=1649784567789',
     image: '8.png',
   },
 
   {
     title: 'Músicas católicas para grupo de oração',
-    link: '#',
+    link: 'https://pay.hotmart.com/W66899425V?bid=1649784602055',
     image: '9.png',
   },
 
   {
     title: 'Músicas católicas que nos marcaram',
-    link: '#',
+    link: 'https://pay.hotmart.com/L63950078A?bid=1649784617630',
     image: '10.png',
   },
 
   {
     title: 'Músicas católicas extras',
-    link: '#',
+    link: 'https://drive.google.com/file/d/1PA-y8li4Sq75NUWp0NFyDYL_0hC2ue_C/view',
     image: '11.png',
   },
 ]
 
-const SectionStyle = styled(DefaultSection)`
+const SectionStyle = styled.section`
+  width: 100%;
+  min-height: 90vh;
   background-color: ${ Colors.black };
   display: flex;
   flex-direction: column;
@@ -95,6 +97,16 @@ const SectionStyle = styled(DefaultSection)`
 
     @media (max-width: ${Sizes.mediaQueryBreak1}) {
       font-size: ${Sizes.bigFontSize4};
+    }
+  }
+
+  & .btnYellow {
+    margin: 30px;
+    text-align: center;
+
+    @media (min-width: ${Sizes.mediaQueryBreak2}) {
+      width: 300px;
+      line-height: 30px;
     }
   }
 `;
@@ -133,6 +145,10 @@ const Section = () => {
             />
           )) }
         </div>
+
+        <RoundedYellowButton className="btnYellow" href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+          QUERO ADQUIRIR TODOS DE UMA SÓ VEZ COM 50% DE DESCONTO
+        </RoundedYellowButton>
     </SectionStyle>
   );
 }
