@@ -77,9 +77,12 @@ const SectionStyle = styled(DefaultSection)`
   align-items: center;
 
   & .ebooksList {
+    width: 70%;
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      width: 100%;
+    }
     display: flex;
     flex-direction: row;
-    width: 70%;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -89,6 +92,10 @@ const SectionStyle = styled(DefaultSection)`
     margin-top: 50px;
     margin-bottom: 25px;
     font-size: ${ Sizes.bigFontSize };
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      font-size: ${Sizes.bigFontSize4};
+    }
   }
 `;
 

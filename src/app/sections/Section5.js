@@ -2,10 +2,14 @@ import React from 'react';
 import styled from 'styled-components'
 import  { DefaultSection } from './Components';
 import { Colors } from '../utils/colors'
+import { Sizes } from '../utils/sizes'
 
 const SectionStyle = styled(DefaultSection)`
   background-color: ${ Colors.yellow };
   display: flex;
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    flex-direction: column;
+  }
 
   & .left, & .right {
     flex: 1;
@@ -27,18 +31,35 @@ const SectionStyle = styled(DefaultSection)`
       background-color: white;
       width: 70%;
       padding: 60px;
+      @media (max-width: ${Sizes.mediaQueryBreak3}) {
+        padding: 40px 2%;
+        width: 90%;
+        font-size: 1.2rem;
+      }
+      
       position: relative;
 
       & .icon, & .icon-profile {
         position: absolute;
+
+        @media (max-width: ${Sizes.mediaQueryBreak3}) {
+          width: 50px;
+          height: 50px;
+        }
+
         width: 100px;
         height: 100px;
+
         background-repeat: no-repeat;
         background-position: center;
       }
       
       & .icon {
         top: -60px;
+        @media (max-width: ${Sizes.mediaQueryBreak3}) {
+          top: -30px;
+        }
+        
         background-color: black;
         background-image: url('aspas.svg');
         background-size: 80%;
@@ -47,11 +68,16 @@ const SectionStyle = styled(DefaultSection)`
 
       & .icon-profile {
         bottom: -60px;
+        right: 4rem;
+        @media (max-width: ${Sizes.mediaQueryBreak3}) {
+          bottom: -30px;
+          right: 1rem;
+        }
+        
         align-self: flex-start;
         background-image: url('marcio-vieira-2.webp');
         background-size: cover;
         border-radius: 50%;
-        right: 4rem;
       }
     }
   }
@@ -133,15 +159,15 @@ const Section = () => {
       <div className='right'>
         <div className='contactContainer'>
           <h2>Contato</h2>
-          <a href='#' className='contactItem'>
+          <a href='https://wa.me/5538997506385' className='contactItem'>
             <div className='icon whatsapp'></div>
             WHATSAPP
           </a>
-          <a href='#' className='contactItem'>
+          <a href='https://www.instagram.com/cifracatolicas/' className='contactItem'>
             INSTAGRAM
             <div className='icon instagram'></div>
           </a>
-          <a href='#' className='contactItem'>
+          <a href='https://www.youtube.com/violaocatolico' className='contactItem'>
             <div className='icon youtube'></div>
             YOUTUBE
           </a>

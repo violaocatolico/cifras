@@ -12,18 +12,14 @@ const SectionStyle = styled(DefaultSection)`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  & .overlay {
-    width: 100%;
-    height: 90vh;
-    background-color: ${Colors.black};
-    opacity: 0.5;
-    position: absolute;
-  }
-
+  
   & .sectionText {
     position: relative;
     width: 75%;
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      width: 95%;
+    }
   }
 
   & .yellow { color: ${Colors.yellow}; }
@@ -32,15 +28,26 @@ const SectionStyle = styled(DefaultSection)`
   & h1 > * {
     font-size: ${Sizes.bigFontSize};
     font-weight: bolder;
+
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      font-size: ${Sizes.bigFontSize2};
+    }
+
+    @media (max-width: ${Sizes.mediaQueryBreak3}) {
+      font-size: ${Sizes.bigFontSize3};
+    }
+
+    @media (max-width: ${Sizes.mediaQueryBreak4}) {
+      font-size: ${Sizes.bigFontSize4};
+    }
   }
 
   & h2 { margin-top: 25px; }
 `;
 
-export default () => {
+const Section = () => {
   return (
     <SectionStyle>
-      <div className='overlay'></div>
       <div className='sectionText'>
         <h1>
           <div className='yellow'>CIFRAS</div>
@@ -55,8 +62,8 @@ export default () => {
           <div className='yellow'>Márcio de Jesus Vieira</div>
         </h2>
       </div>
-
-      
     </SectionStyle>
   );
 }
+
+export default Section;

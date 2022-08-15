@@ -13,18 +13,28 @@ const SectionStyle = styled(DefaultSection)`
   & h1 {
     margin-top: 50px;
     margin-bottom: 25px;
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      font-size: ${Sizes.bigFontSize4};
+    }
+
     font-size: ${ Sizes.bigFontSize };
   }
 `;
 
 const Button = styled.a`
-  background-color: ${ Colors.yellow };
+  width: 450px;
   padding: 20px;
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    width: 90%;
+    padding: 2%;
+  }
+
+  background-color: ${ Colors.yellow };
   border: solid 1px black;
   color: black;
   text-decoration: none;
   margin: 30px 0;
-  width: 30%;
   font-weight: bold;
   color: white;
   font-size: 1.6rem;
@@ -35,7 +45,7 @@ const Button = styled.a`
   }
 `;
 
-export default () => {
+const Section = () => {
 
   return (
     <SectionStyle>
@@ -49,3 +59,5 @@ export default () => {
     </SectionStyle>
   );
 }
+
+export default Section;

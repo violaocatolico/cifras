@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components'
 import  { DefaultSection, RoundedYellowButton, RoundedWhiteButton } from './Components';
-import { Colors } from '../utils/colors'
+import { Colors } from '../utils/colors';
+import { Sizes } from '../utils/sizes';
 
 const SectionStyle = styled(DefaultSection)`
   background-color: ${ Colors.black };
   display: flex;
+
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    flex-direction: column;
+  }
+
   & .left {
     flex: 1;
     display: flex;
@@ -13,7 +19,7 @@ const SectionStyle = styled(DefaultSection)`
     align-items: center;
 
     & img {
-
+      width: 80%;
     }
   }
 
@@ -22,7 +28,14 @@ const SectionStyle = styled(DefaultSection)`
     display: flex;
     padding-top: 8vh;
 
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      justify-content: center;
+    }
+
     & .rightContainer {
+      @media (max-width: ${Sizes.mediaQueryBreak1}) {
+        width: 90%;  
+      }
       width: 60%;
       display: flex;
       flex-direction: column;
@@ -44,7 +57,7 @@ const SectionStyle = styled(DefaultSection)`
 
 `;
 
-export default () => {
+const Section = () => {
 
   return (
     <SectionStyle>
@@ -68,3 +81,4 @@ export default () => {
   );
 }
 
+export default Section;
