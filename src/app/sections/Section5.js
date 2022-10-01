@@ -157,7 +157,7 @@ const Section = () => {
         <div className='quote'>
           <div className='icon'></div>
           <p className='text'>
-            Meu nome é Márcio, tenho 25 anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!
+            Meu nome é Márcio, tenho {new Date().getFullYear() - 1996} anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!
           </p>
           <div className='icon-profile'></div>
         </div>
