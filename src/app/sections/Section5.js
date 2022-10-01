@@ -131,6 +131,11 @@ const SectionStyle = styled.section`
             left: -40px;
             position: absolute;
           }
+          &.tiktok {
+            background-image: url('tiktok.png');
+            right: -40px;
+            position: absolute;
+          }
         }
       }
     }
@@ -171,6 +176,10 @@ const Section = () => {
           <a href='https://www.youtube.com/violaocatolico' className='contactItem'>
             <div className='icon youtube'></div>
             YOUTUBE
+          </a>
+          <a href='https://www.tiktok.com/@cifracatolicas' className='contactItem'>
+            <div className='icon tiktok'></div>
+            TIKTOK
           </a>
         </div>
       </div>
