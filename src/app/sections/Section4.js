@@ -10,11 +10,11 @@ const ebooks = [
     link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
     image: 'Stories.png',
   },
-  {
+  /*{
     title: 'Músicas católicas para advento',
     link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
     image: '1.2.jpeg',
-  },
+  },*/
   {
     title: 'Músicas católicas para a quaresma',
     link: 'https://pay.hotmart.com/P68319360J?bid=1649784445020',
@@ -117,6 +117,7 @@ const SectionStyle = styled.section`
 `;
 
 const EbookStyle = styled.a`
+  transition: transform .1s;
   background-color: ${ Colors.black };
   text-decoration: none;
   display: flex;
@@ -129,6 +130,10 @@ const EbookStyle = styled.a`
   background-repeat: no-repeat;
   background-position: center;
   color: white;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   & h1 {
     font-size: 1rem;
