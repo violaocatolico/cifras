@@ -61,7 +61,7 @@ const Section = () => {
 
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras simplificadas</Button>
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras corretas em cima das letras</Button>
-        <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Indicação rítmica em cada uma música</Button>
+        <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Indicação rítmica em cada música</Button>
         <ButtonChannel href="https://www.youtube.com/violaocatolico" target="_blank">Vídeo aula de todas as músicas em nosso canal do YouTube</ButtonChannel>
 
     </SectionStyle>
