@@ -8,7 +8,12 @@ const ebooks = [
   {
     title: 'Músicas católicas para advento e natal',
     link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
-    image: '1.png',
+    image: 'Stories.png',
+  },
+  {
+    title: 'Músicas católicas para advento',
+    link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
+    image: '1.2.jpeg',
   },
   {
     title: 'Músicas católicas para a quaresma',
@@ -120,7 +125,7 @@ const EbookStyle = styled.a`
   height: 190px;
   margin: 15px;
   background-image: ${ props => `url(ebooks/${props.backgroundImage})` };
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: white;
