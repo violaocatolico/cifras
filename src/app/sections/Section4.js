@@ -8,8 +8,15 @@ const ebooks = [
   {
     title: 'Músicas católicas para advento e natal',
     link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
-    image: '1.png',
+    image: '1.2.jpeg',
   },
+  /*
+  ***TROCAR LINK DO EBOOK***
+  {
+    title: 'Músicas católicas para o natal',
+    link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
+    image: '1.2.jpeg',
+  },*/
   {
     title: 'Músicas católicas para a quaresma',
     link: 'https://pay.hotmart.com/P68319360J?bid=1649784445020',
@@ -112,6 +119,7 @@ const SectionStyle = styled.section`
 `;
 
 const EbookStyle = styled.a`
+  transition: transform .1s;
   background-color: ${ Colors.black };
   text-decoration: none;
   display: flex;
@@ -120,10 +128,14 @@ const EbookStyle = styled.a`
   height: 190px;
   margin: 15px;
   background-image: ${ props => `url(ebooks/${props.backgroundImage})` };
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   color: white;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   & h1 {
     font-size: 1rem;

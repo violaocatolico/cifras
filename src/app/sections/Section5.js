@@ -131,6 +131,11 @@ const SectionStyle = styled.section`
             left: -40px;
             position: absolute;
           }
+          &.tiktok {
+            background-image: url('tiktok.png');
+            right: -40px;
+            position: absolute;
+          }
         }
       }
     }
@@ -152,7 +157,7 @@ const Section = () => {
         <div className='quote'>
           <div className='icon'></div>
           <p className='text'>
-            Meu nome é Márcio, tenho 25 anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!
+            Meu nome é Márcio, tenho {new Date().getFullYear() - 1996} anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!
           </p>
           <div className='icon-profile'></div>
         </div>
@@ -171,6 +176,10 @@ const Section = () => {
           <a href='https://www.youtube.com/violaocatolico' className='contactItem'>
             <div className='icon youtube'></div>
             YOUTUBE
+          </a>
+          <a href='https://www.tiktok.com/@cifracatolicas' className='contactItem'>
+            <div className='icon tiktok'></div>
+            TIKTOK
           </a>
         </div>
       </div>
