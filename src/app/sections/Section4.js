@@ -8,10 +8,12 @@ const ebooks = [
   {
     title: 'Músicas católicas para advento e natal',
     link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
-    image: 'Stories.png',
+    image: '1.2.jpeg',
   },
-  /*{
-    title: 'Músicas católicas para advento',
+  /*
+  ***TROCAR LINK DO EBOOK***
+  {
+    title: 'Músicas católicas para o natal',
     link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
     image: '1.2.jpeg',
   },*/
