@@ -85,13 +85,16 @@ const ModalStyle = styled.div`
 
   & .modal-content {
     position: static;
-    background-color: white;
     width: 70%;
     height: 90%;
   }
 
+  & .modal-content img {
+    width: 100%;
+  }
+
   & .btn-close-modal {
-    position: absolute;
+    position: fixed;
     right: 1%;
     top: 20px;
     color: white;
@@ -133,8 +136,12 @@ const Section = (props) => {
 
       <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
         <a className='btn-close-modal' href="#">X</a>
-        <div className='modal-content'>
-          <iframe src="ebooks/sumario.pdf#toolbar=0&view=FitH" width="100%" height="100%"></iframe>
+        <div className='modal-content' onClick={(e) => e.stopPropagation()}>
+            {
+              Array.from({length: 25},(_,x) => {
+                return <img src={`ebooks/sumario/${x + 1}.jpg`} />
+              })
+            }
         </div>
       </ModalStyle>
     </SectionStyle>
