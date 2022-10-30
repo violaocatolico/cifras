@@ -56,7 +56,6 @@ const SectionStyle = styled.section`
       color: #cdcdcd;
     }
   }
-
 `;
 
 const Section = () => {
@@ -72,9 +71,8 @@ const Section = () => {
       <div className='right'>
         <div className='rightContainer'>
           <p>
-            Meus amigos, este é o nosso grande e-book 11 em 1. Ele leva esse nome porque nele estão reunidos todos os nossos e-books.
+            Meus amigos, este é o nosso grande e-book 12 em 1. Ele leva esse nome porque nele estão reunidos todos os nossos e-books.
           </p>
-
           <RoundedYellowButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
             COMPRE AQUI O E-BOOK COMPLETO!
           </RoundedYellowButton>

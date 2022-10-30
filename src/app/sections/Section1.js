@@ -59,7 +59,7 @@ const Section = () => {
         </h1>
 
         <h2>
-          <div className='white'>Especial 11 em 1</div>
+          <div className='white'>Especial 12 em 1</div>
           <div className='yellow'>Márcio de Jesus Vieira</div>
         </h2>
       </div>
