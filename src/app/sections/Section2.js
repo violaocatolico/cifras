@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import  { RoundedYellowButton, RoundedWhiteButton } from './Components';
 import { Colors } from '../utils/colors';
 import { Sizes } from '../utils/sizes';
@@ -58,7 +58,53 @@ const SectionStyle = styled.section`
   }
 `;
 
-const Section = () => {
+const ModalStyle = styled.div`
+  display: flex;
+  ${(props) => {
+    if (!props.modalShow) {
+      return `display: none;`;
+    }
+  }};
+
+  font-size: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;  
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  
+  /* padding: 50px; */
+
+  overflow-y: scroll;
+
+  & .modal-content {
+    position: static;
+    background-color: white;
+    width: 70%;
+    height: 90%;
+  }
+
+  & .btn-close-modal {
+    position: absolute;
+    right: 1%;
+    top: 20px;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+  }
+`;
+
+
+const Section = (props) => {
 
   return (
     <SectionStyle>
@@ -76,11 +122,22 @@ const Section = () => {
           <RoundedYellowButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
             COMPRE AQUI O E-BOOK COMPLETO!
           </RoundedYellowButton>
-          <RoundedWhiteButton target="_blank" href="https://drive.google.com/file/d/1ZDx-IwoGsl_r5gLYmEkZZVnOC1k39_uA/view">
-            Confira as músicas disponíveis
+          <RoundedWhiteButton href="#" onClick={(e) => {
+            e.preventDefault();
+            props.setModalShow(true);
+          }}>
+            Confira as músicas disponíveis <br />
+            modalShow: {props.modalShow ? 'true' : 'false'}
           </RoundedWhiteButton>
         </div>
       </div>
+
+      <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
+        <a className='btn-close-modal' href="#">X</a>
+        <div className='modal-content'>
+          <iframe src="ebooks/sumario.pdf#toolbar=0&view=FitH" width="100%" height="100%"></iframe>
+        </div>
+      </ModalStyle>
     </SectionStyle>
   );
 }

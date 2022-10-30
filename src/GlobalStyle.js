@@ -8,6 +8,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  ${(props) => {
+    if (props.modalShow) {
+      return ` body { overflow: hidden; }`;
+    }
+  }};
 `;
  
 export default GlobalStyle;
