@@ -4,7 +4,6 @@ import  { RoundedYellowButton, RoundedWhiteButton } from './Components';
 import { Colors } from '../utils/colors';
 import { Sizes } from '../utils/sizes';
 
-
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
@@ -57,7 +56,6 @@ const SectionStyle = styled.section`
       color: #cdcdcd;
     }
   }
-
 `;
 
 const Section = () => {
