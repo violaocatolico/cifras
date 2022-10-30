@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   ${(props) => {
     if (props.modalShow) {
-      return ` body { overflow: hidden; }`;
+      return `body, html { overflow: hidden; position:relative; }`;
     }
   }};
 `;

@@ -86,7 +86,6 @@ const ModalStyle = styled.div`
   & .modal-content {
     position: static;
     width: 70%;
-    height: 90%;
   }
 
   & .modal-content img {
@@ -103,6 +102,7 @@ const ModalStyle = styled.div`
     width: 50px;
     height: 50px;
     text-align: center;
+    cursor: pointer;
   }
 `;
 
@@ -135,13 +135,13 @@ const Section = (props) => {
       </div>
 
       <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
-        <a className='btn-close-modal' href="#">X</a>
+        <a className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</a>
         <div className='modal-content' onClick={(e) => e.stopPropagation()}>
-            {
-              Array.from({length: 25},(_,x) => {
-                return <img src={`ebooks/sumario/${x + 1}.jpg`} />
-              })
-            }
+          {
+            Array.from({length: 25},(_,x) => {
+              return <img src={`ebooks/sumario/${x + 1}.jpg`} />
+            })
+          }
         </div>
       </ModalStyle>
     </SectionStyle>
