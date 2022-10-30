@@ -85,7 +85,7 @@ const ModalStyle = styled.div`
 
   & .modal-content {
     position: static;
-    width: 70%;
+    width: 50%;
   }
 
   & .modal-content img {
