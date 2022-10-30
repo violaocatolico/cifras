@@ -126,8 +126,7 @@ const Section = (props) => {
             e.preventDefault();
             props.setModalShow(true);
           }}>
-            Confira as músicas disponíveis <br />
-            modalShow: {props.modalShow ? 'true' : 'false'}
+            Confira as músicas disponíveis
           </RoundedWhiteButton>
         </div>
       </div>
