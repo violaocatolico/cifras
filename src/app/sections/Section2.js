@@ -86,6 +86,11 @@ const ModalStyle = styled.div`
   & .modal-content {
     position: static;
     width: 50%;
+    height: 100%;
+
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      width: 85%;
+    }
   }
 
   & .modal-content img {
@@ -99,10 +104,15 @@ const ModalStyle = styled.div`
     color: white;
     font-size: 25px;
     text-decoration: none;
-    width: 50px;
-    height: 50px;
     text-align: center;
     cursor: pointer;
+
+    width: 50px;
+    height: 50px;
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      width: 25px;
+      height: 25px;
+    }
   }
 `;
 
