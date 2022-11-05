@@ -21,6 +21,17 @@ const SectionStyle = styled.section`
     justify-content: center;
     align-items: flex-start;
     padding-top: 5rem;
+  }
+
+  & .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 5rem;
+
+    background-color: #0762f5;
+
     & .icon {
       background-color: black;
       width: 20px;
@@ -81,14 +92,6 @@ const SectionStyle = styled.section`
         border-radius: 50%;
       }
     }
-  }
-
-  & .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 5rem;
 
     & .contactContainer {
       display: flex;
@@ -154,6 +157,9 @@ const Section = () => {
   return (
     <SectionStyle>
       <div className='left'>
+        
+      </div>
+      <div className='right'>
         <div className='quote'>
           <div className='icon'></div>
           <p className='text'>
@@ -161,8 +167,7 @@ const Section = () => {
           </p>
           <div className='icon-profile'></div>
         </div>
-      </div>
-      <div className='right'>
+
         <div className='contactContainer'>
           <h2>Contato</h2>
           <a href='https://wa.me/5538997506385' className='contactItem'>
