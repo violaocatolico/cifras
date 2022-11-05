@@ -3,35 +3,37 @@ import styled from 'styled-components';
 
 
 const PageExample = styled.div`
-  width: 500px;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  border: solid 1px black;
 `;
 
 const Container = styled.div`
   display: flex;
   align-items: center;
-  background-color: aquamarine;
+  height: 100%;
 `;
 
 const SlidersContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: orange;
+  height: 100%;
   overflow: hidden;
   position: relative;
-  height: 250px;
 `;
 
 const SlidersTrack = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
-  background-color: tomato;
+  height: 100%;
   overflow: visible;
   position: absolute;
   transition: left .5s;
-
   
-  /* Mover isso pra passar os slides */
+  /* Altera a posição do sliders tracker */
   left: ${props => props.slidersTrackCssLeft}px;
 `;
 
@@ -40,8 +42,13 @@ const SlidePage = styled.div`
 
   background-color: brown;
   width: ${props => props.pageSize}px;
-  height: 200px;
+  height: 80%;
   margin: ${props => props.marginSize}px ${props => props.marginSize}px;
+  transition: height .5s;
+
+  &.currentCenterPage {
+    height: 100%;
+  }
 `;
 
 const Arrow = styled.a`
@@ -60,7 +67,6 @@ const ArrowLeft = styled(Arrow)`
 const ArrowRight = styled(Arrow)`
   background-image: url('arrow-right.png');
 `;
-
 
 const Carousel = () => {
   const slidersContainerRef = useRef(null);
@@ -89,6 +95,8 @@ const Carousel = () => {
   const marginSize = containerSize * 0.02;
   const pageSize = (containerSize / 3) - (marginSize * 2);
 
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   return (
     <PageExample>
       <Container>
@@ -96,21 +104,23 @@ const Carousel = () => {
           e.preventDefault();
           setCurrentCenterPage(currentCenterPage - 1);
         }} />
-        <SlidersContainer ref={slidersContainerRef}>
+        <SlidersContainer ref={slidersContainerRef} dimensions={dimensions}>
           <SlidersTrack slidersTrackCssLeft={getSlidersTrackCssLeft(currentCenterPage, (containerSize / 3))}>
-            <SlidePage pageSize={pageSize} marginSize={marginSize} />
-            <SlidePage pageSize={pageSize} marginSize={marginSize} />
-            <SlidePage pageSize={pageSize} marginSize={marginSize} />
-            <SlidePage pageSize={pageSize} marginSize={marginSize} />
-            <SlidePage pageSize={pageSize} marginSize={marginSize} />
-            <SlidePage pageSize={pageSize} marginSize={marginSize} />
-            <SlidePage pageSize={pageSize} marginSize={marginSize} />
-            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+            {
+              array.map((el, index) => (
+                <SlidePage 
+                  className={index === currentCenterPage ? "currentCenterPage" : ""}
+                  key={index}
+                  pageSize={pageSize}
+                  marginSize={marginSize}
+                />
+              ))
+            }
           </SlidersTrack>
         </SlidersContainer>
         <ArrowRight href="#" onClick={(e) => {
           e.preventDefault();
-          setCurrentCenterPage(currentCenterPage + 1)
+          setCurrentCenterPage(currentCenterPage + 1);
         }} />
       </Container>
       
