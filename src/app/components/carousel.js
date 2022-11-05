@@ -28,6 +28,8 @@ const SlidersTrack = styled.div`
   background-color: tomato;
   overflow: visible;
   position: absolute;
+  transition: left .5s;
+
   
   /* Mover isso pra passar os slides */
   left: ${props => props.slidersTrackCssLeft}px;
@@ -92,7 +94,7 @@ const Carousel = () => {
       <Container>
         <ArrowLeft href="#" onClick={(e) => {
           e.preventDefault();
-          setCurrentCenterPage(currentCenterPage + 1);
+          setCurrentCenterPage(currentCenterPage - 1);
         }} />
         <SlidersContainer ref={slidersContainerRef}>
           <SlidersTrack slidersTrackCssLeft={getSlidersTrackCssLeft(currentCenterPage, (containerSize / 3))}>
@@ -108,15 +110,12 @@ const Carousel = () => {
         </SlidersContainer>
         <ArrowRight href="#" onClick={(e) => {
           e.preventDefault();
-          setCurrentCenterPage(currentCenterPage - 1)
+          setCurrentCenterPage(currentCenterPage + 1)
         }} />
       </Container>
       
       <br /><br /><br /><br />
       {JSON.stringify(dimensions)}
-      
-      <br /><br />
-      { `pageSize: ${pageSize}` }
 
       <br /><br />
       { `currentCenterPage: ${currentCenterPage}` }
@@ -125,7 +124,7 @@ const Carousel = () => {
 }
 
 const getSlidersTrackCssLeft = (currentCenterPage, pageSize) => {
-  return currentCenterPage * pageSize;
+  return ((currentCenterPage * pageSize) * -1) + pageSize;
 }
 
 export default Carousel;
