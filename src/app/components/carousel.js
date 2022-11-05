@@ -1,6 +1,11 @@
 import React, { useState, useLayoutEffect, useRef } from "react";
 import styled from 'styled-components';
 
+
+const PageExample = styled.div`
+  width: 500px;
+`;
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -9,9 +14,23 @@ const Container = styled.div`
 
 const SlidersContainer = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
   background-color: orange;
   overflow: hidden;
+  position: relative;
+  height: 250px;
+`;
+
+const SlidersTrack = styled.div`
+  display: flex;
+  width: 100%;
+  background-color: tomato;
+  overflow: visible;
+  position: absolute;
+  
+  /* Mover isso pra passar os slides */
+  left: ${props => props.slidersTrackCssLeft}px;
 `;
 
 const SlidePage = styled.div`
@@ -42,7 +61,10 @@ const ArrowRight = styled(Arrow)`
 
 
 const Carousel = () => {
-  const ref = useRef(null);
+  const slidersContainerRef = useRef(null);
+
+  // Começa com a segunda página do array centralizada
+  const [currentCenterPage, setCurrentCenterPage] = useState(1);
 
   const [dimensions, setDimensions] = useState({
     containerWidth: 0, 
@@ -51,8 +73,8 @@ const Carousel = () => {
 
   const handleResize = () => {
     setDimensions({
-      containerWidth: ref.current.clientWidth,
-      containerHeight: ref.current.clientHeight,
+      containerWidth: slidersContainerRef.current.clientWidth,
+      containerHeight: slidersContainerRef.current.clientHeight,
     });
   }
 
@@ -66,25 +88,44 @@ const Carousel = () => {
   const pageSize = (containerSize / 3) - (marginSize * 2);
 
   return (
-    <div>
-    <Container>
-      <ArrowLeft href="#" />
-      <SlidersContainer ref={ref}>
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />
-      </SlidersContainer>
-      <ArrowRight href="#" />
-    </Container>
-    <br /><br /><br /><br />
-    {`---------${JSON.stringify(dimensions)}-------`}
-    </div>
+    <PageExample>
+      <Container>
+        <ArrowLeft href="#" onClick={(e) => {
+          e.preventDefault();
+          setCurrentCenterPage(currentCenterPage + 1);
+        }} />
+        <SlidersContainer ref={slidersContainerRef}>
+          <SlidersTrack slidersTrackCssLeft={getSlidersTrackCssLeft(currentCenterPage, (containerSize / 3))}>
+            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+            <SlidePage pageSize={pageSize} marginSize={marginSize} />
+          </SlidersTrack>
+        </SlidersContainer>
+        <ArrowRight href="#" onClick={(e) => {
+          e.preventDefault();
+          setCurrentCenterPage(currentCenterPage - 1)
+        }} />
+      </Container>
+      
+      <br /><br /><br /><br />
+      {JSON.stringify(dimensions)}
+      
+      <br /><br />
+      { `pageSize: ${pageSize}` }
+
+      <br /><br />
+      { `currentCenterPage: ${currentCenterPage}` }
+    </PageExample>
   );
+}
+
+const getSlidersTrackCssLeft = (currentCenterPage, pageSize) => {
+  return currentCenterPage * pageSize;
 }
 
 export default Carousel;
