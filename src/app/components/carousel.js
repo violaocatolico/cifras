@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState, useLayoutEffect, useRef } from "react";
 import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
   align-items: center;
+  background-color: aquamarine;
 `;
 
 const SlidersContainer = styled.div`
   display: flex;
-  width: ${props => props.containerSize}px;
+  width: 100%;
   background-color: orange;
   overflow: hidden;
 `;
@@ -23,8 +24,8 @@ const SlidePage = styled.div`
 `;
 
 const Arrow = styled.a`
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-color: blue;
   background-size: contain;
   background-repeat: no-repeat;
@@ -41,22 +42,48 @@ const ArrowRight = styled(Arrow)`
 
 
 const Carousel = () => {
-  const containerSize = 800;
-  const marginSize = 20;
+  const ref = useRef(null);
+
+  const [dimensions, setDimensions] = useState({
+    containerWidth: 0, 
+    containerHeight: 0
+  });
+
+  const handleResize = () => {
+    setDimensions({
+      containerWidth: ref.current.clientWidth,
+      containerHeight: ref.current.clientHeight,
+    });
+  }
+
+  useLayoutEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize, false);
+  }, []);
+
+  const containerSize = dimensions.containerWidth;
+  const marginSize = containerSize * 0.02;
   const pageSize = (containerSize / 3) - (marginSize * 2);
 
   return (
+    <div>
     <Container>
       <ArrowLeft href="#" />
-      <SlidersContainer containerSize={containerSize}>
+      <SlidersContainer ref={ref}>
         <SlidePage pageSize={pageSize} marginSize={marginSize} />
         <SlidePage pageSize={pageSize} marginSize={marginSize} />
         <SlidePage pageSize={pageSize} marginSize={marginSize} />
         <SlidePage pageSize={pageSize} marginSize={marginSize} />
-        <SlidePage pageSize={pageSize} marginSize={marginSize} />      
+        <SlidePage pageSize={pageSize} marginSize={marginSize} />
+        <SlidePage pageSize={pageSize} marginSize={marginSize} />
+        <SlidePage pageSize={pageSize} marginSize={marginSize} />
+        <SlidePage pageSize={pageSize} marginSize={marginSize} />
       </SlidersContainer>
       <ArrowRight href="#" />
     </Container>
+    <br /><br /><br /><br />
+    {`---------${JSON.stringify(dimensions)}-------`}
+    </div>
   );
 }
 
