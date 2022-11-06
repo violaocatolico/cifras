@@ -1,12 +1,9 @@
 import React, { useState, useLayoutEffect, useRef } from "react";
 import styled from 'styled-components';
 
-const shownItems = 3;
-const animTime = 0.5;
-
 const PageExample = styled.div`
   position: relative;
-  margin: 0 300px;
+  margin: 10px auto;
   width: 800px;
   height: 400px;
   background-color: orange;
@@ -25,8 +22,8 @@ const SlidersContainer = styled.div`
   width: 100%;
   height: 100%;
   
-  /* trocar para hidden */
-  overflow: visible;
+  /* Debug: visible, valor correto: hidden */
+  overflow: hidden;
   position: relative;
 `;
 
@@ -50,7 +47,7 @@ const SlidePage = styled.div`
   width: ${props => props.pageSize}px;
   height: 80%;
   margin: ${props => props.marginSize}px ${props => props.marginSize}px;
-  transition: height ${() => `${animTime}`}s, left ${() => `${animTime}`}s, opacity 0.5s;
+  transition: height 0.5s, left 0.5s, opacity 0.1s;
 
   &.currentCenterPage {
     height: 100%;
@@ -80,9 +77,10 @@ const ArrowRight = styled(Arrow)`
 `;
 
 const Carousel = () => {
+  const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   const slidersContainerRef = useRef(null);
 
-  // Começa com a segunda página do array centralizada
   const [currentPage, setCurrentPage] = useState(0);
 
   const [dimensions, setDimensions] = useState({
@@ -106,8 +104,6 @@ const Carousel = () => {
   const marginSize = containerSize * 0.02;
   const pageSize = (containerSize / 3) - (marginSize * 2);
 
-  const [array, setArray] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
-
   return (
     <PageExample>
       <Container>
@@ -124,7 +120,7 @@ const Carousel = () => {
         <SlidersContainer ref={slidersContainerRef} dimensions={dimensions}>
           <SlidersTrack>
             {array.map((item, index) => (
-              <SlidePage className={getClassName(index, currentPage, array.length)} pageCss={pageCss(index, currentPage, (containerSize / 3))} key={index} pageSize={pageSize} marginSize={marginSize}>{array[index]}</SlidePage>
+              <SlidePage className={getClassName(index, currentPage)} pageCss={pageCss(index, currentPage, (containerSize / 3), array.length)} key={index} pageSize={pageSize} marginSize={marginSize}>{array[index]}</SlidePage>
             ))}
           </SlidersTrack>
         </SlidersContainer>
@@ -158,9 +154,10 @@ let rotateRight = (array) => {
 const getPosition = (currentPage, totalItems, thisPage) => {  
   let tmpArray = Array.from(Array(totalItems).keys());
   
-  // Começa rotacionado duas vezes pra direita
+  // Começa rotacionado tres vezes pra direita
   tmpArray = rotateRight(tmpArray);
-  tmpArray = rotateRight(tmpArray); 
+  tmpArray = rotateRight(tmpArray);
+  tmpArray = rotateRight(tmpArray);
 
   for (let i = 0; i < currentPage; i++) {
     tmpArray = rotateLeft(tmpArray);
@@ -174,31 +171,30 @@ const getPosition = (currentPage, totalItems, thisPage) => {
     }
   }
 
+  // Debug
   /*console.log(`currentPage: ${currentPage}, thisPage: ${thisPage}, pos: ${resultPosition}`);*/
   return resultPosition;
 }
 
 const getLeftByPosition = (position, pageSize) => {
-  return (pageSize * position) - pageSize;
+  return (pageSize * position) - (pageSize * 2);
 }
 
-const pageCss = (thisPage, currentPage, pageSize) => {
-  const totalItems = 10;
+const pageCss = (thisPage, currentPage, pageSizePx, totalItems) => {
 
   let position = getPosition(currentPage, totalItems, thisPage);
-  let left = getLeftByPosition(position, pageSize);
+  let left = getLeftByPosition(position, pageSizePx);
 
+  let opacityTransparent = 0; //Debug: 0.5;
   return {
     left: left,
-    opacity: (position === 0 || position === 4) ? 0.5 : 1
+    opacity: (position === 0 || position === totalItems -1) ? opacityTransparent : 1
   };
 }
 
-const getClassName = (position, currentPage, total) => {
-  let calculatedPosition = (2 - currentPage);
-  if (position === calculatedPosition) {
-    return '';
-    // return 'currentCenterPage';
+const getClassName = (position, currentPage) => {
+  if (position === currentPage) {
+    return 'currentCenterPage';
   }
 }
 
