@@ -1,6 +1,8 @@
 import React, { useState, useLayoutEffect, useRef } from "react";
 import styled from 'styled-components';
 
+const height = 300;
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -11,7 +13,7 @@ const SlidersContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: ${() => height}px;
   
   /* Debug: visible, valor correto: hidden */
   overflow: hidden;
@@ -58,7 +60,7 @@ const SlidePage = styled.div`
 const Arrow = styled.a`
   z-index: 99;
   width: 50px;
-  height: 300px;
+  height: ${() => height}px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

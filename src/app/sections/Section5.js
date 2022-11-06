@@ -40,7 +40,7 @@ const SectionStyle = styled.section`
 
     & .quote {
       line-height: 1.6em;
-      font-size: 1.6em;
+      font-size: 1.4em;
       background-color: white;
       width: 70%;
       padding: 60px;
@@ -164,7 +164,7 @@ const TestimonialStyle = styled.div`
 
 const TestimonialTitleStyle = styled.h1`
   font-size: 40px;
-  padding: 0 50px;
+  padding: 40px 0 0 0;
   text-align: center;
 `;
 
