@@ -6,10 +6,11 @@ const animTime = 0.5;
 
 const PageExample = styled.div`
   position: relative;
-  margin: 0 auto;
-  width: 400px;
-  height: 200px;
+  margin: 0 300px;
+  width: 800px;
+  height: 400px;
   background-color: orange;
+  font-size: 100px;
 `;
 
 const Container = styled.div`
@@ -40,6 +41,10 @@ const SlidersTrack = styled.div`
 
 const SlidePage = styled.div`
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 
   background-color: brown;
   width: ${props => props.pageSize}px;
@@ -110,7 +115,7 @@ const Carousel = () => {
           e.preventDefault();
 
           if (currentPage === 0) {
-            setCurrentPage(4);
+            setCurrentPage(array.length -1);
           } else {
             setCurrentPage(currentPage - 1);
           }
@@ -118,20 +123,13 @@ const Carousel = () => {
         }} />
         <SlidersContainer ref={slidersContainerRef} dimensions={dimensions}>
           <SlidersTrack>
-
-            <SlidePage pageCss={pageCss(0, currentPage, (containerSize / 3))} key={0} pageSize={pageSize} marginSize={marginSize}>{array[0]}</SlidePage>
-            <SlidePage pageCss={pageCss(1, currentPage, (containerSize / 3))} key={1} pageSize={pageSize} marginSize={marginSize}>{array[1]}</SlidePage>
-            <SlidePage pageCss={pageCss(2, currentPage, (containerSize / 3))} key={2} pageSize={pageSize} marginSize={marginSize}>{array[2]}</SlidePage>
-            <SlidePage pageCss={pageCss(3, currentPage, (containerSize / 3))} key={3} pageSize={pageSize} marginSize={marginSize}>{array[3]}</SlidePage>
-            <SlidePage pageCss={pageCss(4, currentPage, (containerSize / 3))} key={4} pageSize={pageSize} marginSize={marginSize}>{array[4]}</SlidePage>
-
-
+            {array.map((item, index) => (
+              <SlidePage className={getClassName(index, currentPage, array.length)} pageCss={pageCss(index, currentPage, (containerSize / 3))} key={index} pageSize={pageSize} marginSize={marginSize}>{array[index]}</SlidePage>
+            ))}
           </SlidersTrack>
         </SlidersContainer>
         <ArrowRight href="#" onClick={(e) => {
-          e.preventDefault();
-
-          if (currentPage === 4) {
+          if (currentPage === array.length - 1) {
             setCurrentPage(0);
           } else {
             setCurrentPage(currentPage + 1);
@@ -139,18 +137,45 @@ const Carousel = () => {
         }} />
       </Container>
 
-      <br /><br />
+      
       { `currentPage: ${currentPage}` }
 
-      <br /><br />
-      { `array: ${array}` }
       
     </PageExample>
   );
 }
 
-const getPosition = (currentPage, totalItems, thisPage) => {
-  return (currentPage + totalItems + thisPage) % totalItems;
+let rotateLeft = (array) => {   
+  let result = [...array.slice(1, array.length), array[0]];
+  return result;
+}
+
+let rotateRight = (array) => {   
+  let result = [array[array.length -1], ...array.slice(0, array.length -1)];
+  return result;
+}
+
+const getPosition = (currentPage, totalItems, thisPage) => {  
+  let tmpArray = Array.from(Array(totalItems).keys());
+  
+  // Começa rotacionado duas vezes pra direita
+  tmpArray = rotateRight(tmpArray);
+  tmpArray = rotateRight(tmpArray); 
+
+  for (let i = 0; i < currentPage; i++) {
+    tmpArray = rotateLeft(tmpArray);
+  }
+
+  let resultPosition;
+  for (let i = 0; i < tmpArray.length; i++) {
+    if (tmpArray[i] === thisPage) {
+      resultPosition = i;
+      break;
+    }
+  }
+
+  /*console.log(`currentPage: ${currentPage}, thisPage: ${thisPage}, pos: ${resultPosition}`);*/
+  return resultPosition;
 }
 
 const getLeftByPosition = (position, pageSize) => {
@@ -158,8 +183,7 @@ const getLeftByPosition = (position, pageSize) => {
 }
 
 const pageCss = (thisPage, currentPage, pageSize) => {
-  const leftRightAuxItems = 2;
-  const totalItems = shownItems + leftRightAuxItems;
+  const totalItems = 10;
 
   let position = getPosition(currentPage, totalItems, thisPage);
   let left = getLeftByPosition(position, pageSize);
@@ -168,6 +192,14 @@ const pageCss = (thisPage, currentPage, pageSize) => {
     left: left,
     opacity: (position === 0 || position === 4) ? 0.5 : 1
   };
+}
+
+const getClassName = (position, currentPage, total) => {
+  let calculatedPosition = (2 - currentPage);
+  if (position === calculatedPosition) {
+    return '';
+    // return 'currentCenterPage';
+  }
 }
 
 export default Carousel;
