@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import { Colors } from '../utils/colors'
 import { Sizes } from '../utils/sizes'
+import Carousel from '../components/carousel';
 
 const SectionStyle = styled.section`
   width: 100%;
@@ -13,24 +14,24 @@ const SectionStyle = styled.section`
   }
 
   & .left, & .right {
-    flex: 1;
     display: flex;
   }
 
   & .left {
+    flex: 1.5;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 5rem;
+    align-items: center;
   }
 
   & .right {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-bottom: 5rem;
-
-    background-color: #0762f5;
+    padding-top: 80px;
+    padding-bottom: 40px;
 
     & .icon {
       background-color: black;
@@ -95,6 +96,7 @@ const SectionStyle = styled.section`
 
     & .contactContainer {
       display: flex;
+      margin-top: 100px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -146,18 +148,36 @@ const SectionStyle = styled.section`
     & h2 {
       font-weight: bold;
       font-size: 2.5rem;
-      margin-bottom: 25px;
+      margin-bottom: 5px;
     }
 
   }
 `;
 
-const Section = () => {
+const TestimonialStyle = styled.div`
+  background-image: url(${props => props.img});
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+`;
 
+const TestimonialTitleStyle = styled.h1`
+  font-size: 40px;
+  padding: 0 50px;
+  text-align: center;
+`;
+
+const Section = () => {
   return (
     <SectionStyle>
       <div className='left'>
-        
+        <TestimonialTitleStyle>O que estão dizendo sobre meu trabalho:</TestimonialTitleStyle>
+        <Carousel itemsList={
+          Array.from({length: 8},(_, i) => {
+            return <TestimonialStyle key={i} img={`depoimentos/${i + 1}.png`} />
+          })
+        }/>
       </div>
       <div className='right'>
         <div className='quote'>

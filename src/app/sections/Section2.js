@@ -148,8 +148,8 @@ const Section = (props) => {
         <a className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</a>
         <div className='modal-content' onClick={(e) => e.stopPropagation()}>
           {
-            Array.from({length: 25},(_,x) => {
-              return <img src={`ebooks/sumario/${x + 1}.jpg`} />
+            Array.from({length: 25},(_, x) => {
+              return <img key={x} src={`ebooks/sumario/${x + 1}.jpg`} />
             })
           }
         </div>

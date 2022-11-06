@@ -1,19 +1,10 @@
 import React, { useState, useLayoutEffect, useRef } from "react";
 import styled from 'styled-components';
 
-const PageExample = styled.div`
-  position: relative;
-  margin: 10px auto;
-  width: 800px;
-  height: 400px;
-  background-color: orange;
-  font-size: 100px;
-`;
-
 const Container = styled.div`
   display: flex;
   align-items: center;
-  height: 100%;
+  width: 100%;
 `;
 
 const SlidersContainer = styled.div`
@@ -43,14 +34,19 @@ const SlidePage = styled.div`
   justify-content: center;
   color: white;
 
-  background-color: brown;
+  /* background-color: brown; */
   width: ${props => props.pageSize}px;
-  height: 80%;
+  height: 100%;
   margin: ${props => props.marginSize}px ${props => props.marginSize}px;
-  transition: height 0.5s, left 0.5s, opacity 0.1s;
+  transition: left 0.5s, opacity 0.1s;
 
-  &.currentCenterPage {
-    height: 100%;
+  & > * {
+    background-size: 80%;
+    transition: background-size 0.5s;
+  }
+
+  &.currentCenterPage > * {
+    background-size: 100%;
   }
 
   /* Altera a posição */
@@ -62,7 +58,7 @@ const SlidePage = styled.div`
 const Arrow = styled.a`
   z-index: 99;
   width: 50px;
-  height: 50px;
+  height: 300px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -76,8 +72,8 @@ const ArrowRight = styled(Arrow)`
   background-image: url('arrow-right.png');
 `;
 
-const Carousel = () => {
-  const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const Carousel = (props) => {
+  const array = props.itemsList;
 
   const slidersContainerRef = useRef(null);
 
@@ -101,43 +97,50 @@ const Carousel = () => {
   }, []);
 
   const containerSize = dimensions.containerWidth;
-  const marginSize = containerSize * 0.02;
+  
+  // Alterar multiplicador para ajustar tamanho da margem
+  const marginSize = containerSize * 0;
   const pageSize = (containerSize / 3) - (marginSize * 2);
 
   return (
-    <PageExample>
-      <Container>
-        <ArrowLeft href="#" onClick={(e) => {
-          e.preventDefault();
+    /*<PageExample>*/
+    <Container>
+      <ArrowLeft href="#" onClick={(e) => {
+        e.preventDefault();
 
-          if (currentPage === 0) {
-            setCurrentPage(array.length -1);
-          } else {
-            setCurrentPage(currentPage - 1);
-          }
+        if (currentPage === 0) {
+          setCurrentPage(array.length -1);
+        } else {
+          setCurrentPage(currentPage - 1);
+        }
 
-        }} />
-        <SlidersContainer ref={slidersContainerRef} dimensions={dimensions}>
-          <SlidersTrack>
-            {array.map((item, index) => (
-              <SlidePage className={getClassName(index, currentPage)} pageCss={pageCss(index, currentPage, (containerSize / 3), array.length)} key={index} pageSize={pageSize} marginSize={marginSize}>{array[index]}</SlidePage>
-            ))}
-          </SlidersTrack>
-        </SlidersContainer>
-        <ArrowRight href="#" onClick={(e) => {
-          if (currentPage === array.length - 1) {
-            setCurrentPage(0);
-          } else {
-            setCurrentPage(currentPage + 1);
-          }
-        }} />
-      </Container>
-
-      
-      { `currentPage: ${currentPage}` }
-
-      
-    </PageExample>
+      }} />
+      <SlidersContainer ref={slidersContainerRef} dimensions={dimensions}>
+        <SlidersTrack>
+          {array.map((item, index) => (
+            <SlidePage 
+              className={getClassName(index, currentPage)} 
+              pageCss={pageCss(index, currentPage, (containerSize / 3), array.length)} 
+              key={index} 
+              pageSize={pageSize} 
+              marginSize={marginSize}
+            >
+                {array[index]}
+            </SlidePage>
+          ))}
+        </SlidersTrack>
+      </SlidersContainer>
+      <ArrowRight href="#" onClick={(e) => {
+        e.preventDefault();
+        if (currentPage === array.length - 1) {
+          setCurrentPage(0);
+        } else {
+          setCurrentPage(currentPage + 1);
+        }
+      }} />
+      {/* Debug `currentPage: ${currentPage}` */}
+    </Container>
+    /* </PageExample> */
   );
 }
 
