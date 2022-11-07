@@ -98,6 +98,8 @@ const ModalStyle = styled.div`
   }
 
   & .btn-close-modal {
+    background-color: transparent;
+    border: none;
     position: fixed;
     right: 1%;
     top: 20px;
@@ -145,7 +147,7 @@ const Section = (props) => {
       </div>
 
       <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
-        <a href='#' className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</a>
+        <button className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</button>
         <div className='modal-content' onClick={(e) => e.stopPropagation()}>
           {
             Array.from({length: 25},(_, x) => {
