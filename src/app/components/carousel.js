@@ -1,5 +1,4 @@
-import { current } from "@reduxjs/toolkit";
-import React, { useState, useLayoutEffect, useRef } from "react";
+import React, { useState, useLayoutEffect, useRef, useCallback } from "react";
 import styled from 'styled-components';
 
 const height = 300;
@@ -101,13 +100,13 @@ const Carousel = (props) => {
   const marginSize = containerSize * 0;
   const pageSize = (containerSize / 3) - (marginSize * 2);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     if (currentPage === array.length - 1) {
       setCurrentPage(0);
     } else {
       setCurrentPage(currentPage + 1);
     }
-  }
+  }, [setCurrentPage, array, currentPage]);
 
   useLayoutEffect(() => {
     handleResize();
@@ -120,7 +119,7 @@ const Carousel = (props) => {
       return () => clearInterval(interval);
     }
 
-  }, [autoPlay, currentPage, array, setCurrentPage]);
+  }, [autoPlay, goToNext]);
 
   return (
     /*<PageExample>*/
