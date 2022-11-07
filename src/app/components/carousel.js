@@ -1,3 +1,4 @@
+import { current } from "@reduxjs/toolkit";
 import React, { useState, useLayoutEffect, useRef } from "react";
 import styled from 'styled-components';
 
@@ -80,6 +81,7 @@ const Carousel = (props) => {
   const slidersContainerRef = useRef(null);
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
 
   const [dimensions, setDimensions] = useState({
     containerWidth: 0, 
@@ -93,22 +95,39 @@ const Carousel = (props) => {
     });
   }
 
-  useLayoutEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize, false);
-  }, []);
-
   const containerSize = dimensions.containerWidth;
   
   // Alterar multiplicador para ajustar tamanho da margem
   const marginSize = containerSize * 0;
   const pageSize = (containerSize / 3) - (marginSize * 2);
 
+  const goToNext = () => {
+    if (currentPage === array.length - 1) {
+      setCurrentPage(0);
+    } else {
+      setCurrentPage(currentPage + 1);
+    }
+  }
+
+  useLayoutEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize, false);
+
+    if (autoPlay) {
+      const interval = setInterval(() => {
+        goToNext();
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+
+  }, [autoPlay, currentPage, array, setCurrentPage]);
+
   return (
     /*<PageExample>*/
     <Container>
       <ArrowLeft href="#" onClick={(e) => {
         e.preventDefault();
+        setAutoPlay(false);
 
         if (currentPage === 0) {
           setCurrentPage(array.length -1);
@@ -132,14 +151,14 @@ const Carousel = (props) => {
           ))}
         </SlidersTrack>
       </SlidersContainer>
-      <ArrowRight href="#" onClick={(e) => {
-        e.preventDefault();
-        if (currentPage === array.length - 1) {
-          setCurrentPage(0);
-        } else {
-          setCurrentPage(currentPage + 1);
-        }
-      }} />
+      <ArrowRight 
+        href="#" 
+        onClick={(e) => {
+          e.preventDefault();
+          setAutoPlay(false);
+          goToNext();
+        }} 
+      />
       {/* Debug `currentPage: ${currentPage}` */}
     </Container>
     /* </PageExample> */
