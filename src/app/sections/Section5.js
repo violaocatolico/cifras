@@ -163,6 +163,11 @@ const TestimonialStyle = styled.div`
 `;
 
 const TestimonialTitleStyle = styled.h1`
+
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    font-size: 20px;
+  }
+
   font-size: 40px;
   padding: 40px 0 0 0;
   text-align: center;

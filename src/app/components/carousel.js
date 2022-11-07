@@ -1,5 +1,6 @@
 import React, { useState, useLayoutEffect, useRef, useCallback } from "react";
 import styled from 'styled-components';
+import { Sizes } from '../utils/sizes';
 
 const height = 300;
 
@@ -13,6 +14,10 @@ const SlidersContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
+
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    height: ${() => height / 2}px;
+  }
   height: ${() => height}px;
   
   /* Debug: visible, valor correto: hidden */
@@ -61,6 +66,10 @@ const Arrow = styled.a`
   z-index: 99;
   width: 50px;
   height: ${() => height}px;
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    height: ${() => height / 2}px;
+  }
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
