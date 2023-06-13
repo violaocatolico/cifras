@@ -6,14 +6,11 @@ import { Sizes } from '../utils/sizes';
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
-  background-image: url('marcio-vieira.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: #ffc10d;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+    
   & .sectionText {
     position: relative;
     width: 75%;
@@ -23,12 +20,13 @@ const SectionStyle = styled.section`
     }
   }
 
-  & .yellow { color: ${Colors.yellow}; }
-  & .white { color: ${Colors.white}; }
-
   & h1 > * {
     font-size: ${Sizes.bigFontSize};
-    font-weight: bolder;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  & .black { color: ${Colors.black}; 
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       font-size: ${Sizes.bigFontSize2};
@@ -43,15 +41,16 @@ const SectionStyle = styled.section`
     }
   }
 
-  & h2 { margin-top: 25px; }
-  & h4 {
-    font-size: ${Sizes.smallFontSize};
-    font-weight: normal;
+  & h2 { 
+    margin-top: 25px; 
     text-align: center;
-    font-style: italic;
-    margin-top: 100px;
+    justify-items: center;
+    justify-items: center;
+    margin-top: 50px;
     margin-bottom: 35px;
+    font-weight: normal;
   }
+  
 `;
 
 const Section = () => {
@@ -59,19 +58,16 @@ const Section = () => {
     <SectionStyle>
       <div className='sectionText'>
         <h1>
-          <div className='yellow'>Cifras católicas</div>
-          <div className='white'>de músicas para</div>
-          <div className='yellow'>vários momentos</div>
-          <div className='white'>da igreja</div>
+          <div className='yellow'>Nosso trabalho</div>
+          
         </h1>
-
         <h2>
-          <div className='white'>ESPECIAL 13 em 1</div>
-          <div className='yellow'>MÁRCIO DE JESUS VIEIRA</div>
+          <div className='black'>Atualmente, contamos com 13 e-books de músicas católicas e 
+          cada um deles aborda um tema diferente. Todas as cifras são simplificadas, assim, 
+          permitimos que mais pessoas possam ter condições de tocar sem nenhuma dificuldade. 
+          Além disso, todas as músicas estão gravadas em nosso canal do YouTube, 
+          que inclusive conta com mais de 20 mil inscritos e mais de 3 milhões de visualizações. </div>
         </h2>
-        <h4>
-          <div className='white'> O maior acervo de músicas católicas do Brasil</div>
-        </h4>
       </div>
     </SectionStyle>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import  { RoundedYellowButton } from './Components';
+import  { RoundedCreamButton } from './Components';
 import { Colors } from '../utils/colors'
 import { Sizes } from '../utils/sizes'
 
@@ -84,7 +85,7 @@ const SectionStyle = styled.section`
   align-items: center;
 
   & .ebooksList {
-    width: 70%;
+    width: 80%;
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       width: 100%;
     }
@@ -94,11 +95,12 @@ const SectionStyle = styled.section`
     justify-content: center;
   }
 
-  & > h1 {
+  & > h2 {
     color: ${ Colors.white };
     margin-top: 50px;
     margin-bottom: 25px;
-    font-size: ${ Sizes.bigFontSize };
+    font-size: ${ Sizes.bigFontSize2};
+    font-weight: normal;
 
     @media (max-width: ${Sizes.mediaQueryBreak1}) {
       font-size: ${Sizes.bigFontSize4};
@@ -108,12 +110,24 @@ const SectionStyle = styled.section`
   & .btnYellow {
     margin: 30px;
     text-align: center;
+    font-size: 10px;
+
+    @media (min-width: ${Sizes.mediaQueryBreak2}) {
+      width: 300px;
+      line-height: 30px;
+    }
+
+  & .btnCream {
+    margin: 30px;
+    text-align: center;
+    font-size: ${ Sizes.bigFontSize2};
 
     @media (min-width: ${Sizes.mediaQueryBreak2}) {
       width: 300px;
       line-height: 30px;
     }
   }
+}
 `;
 
 const EbookStyle = styled.a`
@@ -135,15 +149,16 @@ const EbookStyle = styled.a`
     transform: scale(1.2);
   }
 
-  & h1 {
+  & h2 {
     font-size: 1rem;
+   
   }
 `;
 
 const Section = () => {
   return (
     <SectionStyle>
-        <h1>E-BOOKS</h1>
+        <h2>E-books</h2>
 
         <div className='ebooksList'>
           { ebooks.map((ebook, index) => (
@@ -155,9 +170,13 @@ const Section = () => {
             />
           )) }
         </div>
+        <RoundedCreamButton className="btnCream" href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+          Confira as músicas disponíveis
+        </RoundedCreamButton>
 
         <RoundedYellowButton className="btnYellow" href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-          QUERO ADQUIRIR TODOS DE UMA SÓ VEZ COM 50% DE DESCONTO
+          QUERO ADQUIRIR TODOS DE UMA 
+          SÓ VEZ COM 50% DE DESCONTO
         </RoundedYellowButton>
     </SectionStyle>
   );

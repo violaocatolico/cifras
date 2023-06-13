@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Section1 from './app/sections/Section1';
 import Section2 from './app/sections/Section2';
+import Section11 from './app/sections/Section11';
 import Section3 from './app/sections/Section3';
 import Section4 from './app/sections/Section4';
 import Section5 from './app/sections/Section5';
@@ -15,6 +16,7 @@ function App() {
       <GlobalStyle modalShow={modalShow} />
       <Section1 />
       <Section2 modalShow={modalShow} setModalShow={setModalShow} />
+      <Section11 />
       <Section3 />
       <Section4 />
       <Section5 />

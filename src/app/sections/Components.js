@@ -4,10 +4,10 @@ import { Colors } from '../utils/colors'
 const RoundedYellowButton = styled.a`
   transition: transform .1s;  
   background-color: ${Colors.yellow};
-  color: white;
+  color: black;
   text-decoration: underline;
   padding: 20px 40px;
-  border-radius: 15px;
+  border-radius: 25px;
   width: fit-content;
   font-weight: bold;
   text-align: center;
@@ -17,6 +17,22 @@ const RoundedYellowButton = styled.a`
   }
 
 `;
+
+const RoundedCreamButton = styled.a`
+  transition: transform .1s;  
+  background-color: ${Colors.yellow};
+  color: black;
+  text-decoration: underline;
+  padding: 20px 40px;
+  border-radius: 25px;
+  width: fit-content;
+  font-weight: bold;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+  `;
 
 const RoundedWhiteButton = styled.a`
   transition: transform .1s;
@@ -35,5 +51,6 @@ const RoundedWhiteButton = styled.a`
 
 export {
     RoundedYellowButton,
+    RoundedCreamButton,
     RoundedWhiteButton
 };
