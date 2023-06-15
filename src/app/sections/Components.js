@@ -4,10 +4,11 @@ import { Colors } from '../utils/colors'
 const RoundedYellowButton = styled.a`
   transition: transform .1s;  
   background-color: ${Colors.yellow};
+  
   color: black;
   text-decoration: underline;
   padding: 20px 40px;
-  border-radius: 25px;
+  border-radius: 45px;
   width: fit-content;
   font-weight: bold;
   text-align: center;
@@ -20,12 +21,12 @@ const RoundedYellowButton = styled.a`
 
 const RoundedCreamButton = styled.a`
   transition: transform .1s;  
-  background-color: ${Colors.yellow};
+  background-color: ${Colors.white2};
   color: black;
-  text-decoration: underline;
-  padding: 20px 40px;
-  border-radius: 25px;
-  width: fit-content;
+  text-decoration: none;
+  padding: 20px 20px;
+  border-radius: 45px;
+  width: 280px;
   font-weight: bold;
   text-align: center;
 
@@ -49,8 +50,49 @@ const RoundedWhiteButton = styled.a`
   }
 `;
 
+const RoundedBlackButton = styled.a`
+  transition: transform .1s;  
+  background-color: ${Colors.black};
+  
+  color: white;
+  text-decoration: none;
+  padding: 20px 40px;
+  border-radius: 45px;
+  width: fit-content;
+  font-weight: bold;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+`;
+
+const RoundedWhatsappButton = styled.a`
+  transition: transform .1s;  
+  background-color: ${Colors.white};
+  
+  color: black;
+  text-decoration: none;
+  padding: 20px 40px;
+  border-radius: 45px;
+  width: fit-content;
+  font-weight: bold;
+  text-align: center;
+
+  background-image: url('whatsapp.svg');
+  left: -40px;
+  position: absolute;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
 export {
     RoundedYellowButton,
     RoundedCreamButton,
-    RoundedWhiteButton
+    RoundedWhiteButton,
+    RoundedBlackButton,
+    RoundedWhatsappButton
 };

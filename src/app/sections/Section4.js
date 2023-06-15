@@ -4,6 +4,7 @@ import  { RoundedYellowButton } from './Components';
 import  { RoundedCreamButton } from './Components';
 import { Colors } from '../utils/colors'
 import { Sizes } from '../utils/sizes'
+import { Text } from 'react';
 
 const ebooks = [
   {
@@ -109,8 +110,10 @@ const SectionStyle = styled.section`
 
   & .btnYellow {
     margin: 30px;
-    text-align: center;
-    font-size: 10px;
+    text-align: justify-all;
+    font-size: 15px;
+    padding: 10px;
+
 
     @media (min-width: ${Sizes.mediaQueryBreak2}) {
       width: 300px;
@@ -118,10 +121,12 @@ const SectionStyle = styled.section`
     }
 
   & .btnCream {
+    background: white2;
     margin: 30px;
     text-align: center;
     font-size: ${ Sizes.bigFontSize2};
-
+    padding: 15px;
+   
     @media (min-width: ${Sizes.mediaQueryBreak2}) {
       width: 300px;
       line-height: 30px;
@@ -179,7 +184,9 @@ const Section = () => {
           SÓ VEZ COM 50% DE DESCONTO
         </RoundedYellowButton>
     </SectionStyle>
+    
   );
+  
 }
 
 export default Section;
