@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Section1 from './app/sections/Section1';
 import Section2 from './app/sections/Section2';
-import Section11 from './app/sections/Section11';
-import Section12 from './app/sections/Section12';
 import Section3 from './app/sections/Section3';
 import Section4 from './app/sections/Section4';
 import Section5 from './app/sections/Section5';
-import Footer from './app/sections/Footer';
+import Section6 from './app/sections/Section6';
+import Section7 from './app/sections/Section7';
+import Section8 from './app/sections/Section8';
 import GlobalStyle from './GlobalStyle';
 
 function App() {
@@ -16,13 +16,13 @@ function App() {
     <main>      
       <GlobalStyle modalShow={modalShow} />
       <Section1 />
-      <Section2 modalShow={modalShow} setModalShow={setModalShow} />
-      <Section11 />
-      <Section12 />
+      <Section2 />
       <Section3 />
       <Section4 />
-      <Section5 />
-      <Footer />
+      <Section5 modalShow={modalShow} setModalShow={setModalShow}/>
+      <Section6 />
+      <Section7 />
+      <Section8 />
     </main>
   );
 }

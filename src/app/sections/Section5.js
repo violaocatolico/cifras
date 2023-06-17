@@ -1,220 +1,206 @@
 import React from 'react';
-import styled from 'styled-components'
-import { Colors } from '../utils/colors'
-import { Sizes } from '../utils/sizes'
-import Carousel from '../components/carousel';
+import styled from 'styled-components';
+import  { RoundedYellowEuQueroButton } from './Components';
+import { Colors } from '../utils/colors';
+import { Sizes } from '../utils/sizes';
 
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
-  background-color: ${ Colors.yellow };
+  background-color: ${ Colors.black };
   display: flex;
+
   @media (max-width: ${Sizes.mediaQueryBreak2}) {
     flex-direction: column;
   }
 
-  & .left, & .right {
-    display: flex;
-  }
-
   & .left {
-    flex: 1.5;
-    flex-direction: column;
+    flex: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
+
+    & img {
+      width: 80%;
+    }
+    
   }
 
   & .right {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px;
-    padding-bottom: 40px;
+    padding-top: 8vh;
 
-    & .icon {
-      background-color: black;
-      width: 20px;
-    }
-
-    & .quote {
-      line-height: 1.6em;
-      font-size: 1.4em;
-      background-color: white;
-      width: 70%;
-      padding: 60px;
-      @media (max-width: ${Sizes.mediaQueryBreak3}) {
-        padding: 40px 2%;
-        width: 90%;
-        font-size: 1.2rem;
-      }
-      
-      position: relative;
-
-      & .icon, & .icon-profile {
-        position: absolute;
-
-        @media (max-width: ${Sizes.mediaQueryBreak3}) {
-          width: 50px;
-          height: 50px;
-        }
-
-        width: 100px;
-        height: 100px;
-
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      
-      & .icon {
-        top: -60px;
-        @media (max-width: ${Sizes.mediaQueryBreak3}) {
-          top: -30px;
-        }
-        
-        background-color: black;
-        background-image: url('aspas.svg');
-        background-size: 80%;
-        border-radius: 8px;
-      }
-
-      & .icon-profile {
-        bottom: -60px;
-        right: 4rem;
-        @media (max-width: ${Sizes.mediaQueryBreak3}) {
-          bottom: -30px;
-          right: 1rem;
-        }
-        
-        align-self: flex-start;
-        background-image: url('marcio-vieira-2.webp');
-        background-size: cover;
-        border-radius: 50%;
-      }
-    }
-
-    & .contactContainer {
-      display: flex;
-      margin-top: 100px;
-      flex-direction: column;
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
       justify-content: center;
-      align-items: center;
+    }
 
-      & .contactItem {
-        background-color: white;
-        box-shadow: 0px 13px 15px -12px #000000;
-        width: 70%;
-        margin: 10px 0;
-        padding: 14px 30px;
-        text-align: center;
-        color: black;
-        position: relative;
-
-        & .icon {
-          background-color: black;
-          width: 60px;
-          height: 60px;
-          background-size: 70%;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 50%;
-          top: -7px;
-
-          &.whatsapp {
-            background-image: url('whatsapp.svg');
-            left: -40px;
-            position: absolute;
-          }
-          &.instagram {
-            background-image: url('instagram.svg');
-            right: -40px;
-            position: absolute;
-          }
-          &.youtube {
-            background-image: url('youtube.svg');
-            left: -40px;
-            position: absolute;
-          }
-          &.tiktok {
-            background-image: url('tiktok.png');
-            right: -40px;
-            position: absolute;
-          }
-        }
+    & .rightContainer {
+      @media (max-width: ${Sizes.mediaQueryBreak1}) {
+        width: 90%;  
       }
+      & h2 {
+      color: white;
+    }
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    & .timer {
+      width: 75%;
+      height: 32%;      
+      background-color: yellow;
+      border-radius: 25px;
+      display: flex; 
     }
 
-    & h2 {
+    & .timerText {
+      color: black;
       font-weight: bold;
-      font-size: 2.5rem;
-      margin-bottom: 5px;
+      line-height: 110%;
+      display: flex;
+    }
+    & .timerNumbers {
+      width: 2%;
+      height: 10%;
+      background-color: red;
+      padding: 35px;
+      margin: 35px;
+      border-radius: 10px;
+      justify-content: center; 
+   
+
+    }
+    & .numberTime {
+      color: white;
+      align-items: center;
+      top: 10%;
+   
+      justify-content: center; 
+    
+      
+
+
+    }
+    & .nameTime {
+      color: white;
+      text-align: center;
+     
+    }
+    & * {
+      margin: 20px 0;
     }
 
+    & p {
+      font-size: 1.2rem;
+      color: ${ Colors.white };
+      line-height: 35px;
+      text-align: center;
+      color: #cdcdcd;
+    }
   }
 `;
 
-const TestimonialStyle = styled.div`
-  background-image: url(${props => props.img});
+const ModalStyle = styled.div`
+  display: flex;
+  ${(props) => {
+    if (!props.modalShow) {
+      return `display: none;`;
+    }
+  }};
+
+  font-size: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;  
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-`;
 
-const TestimonialTitleStyle = styled.h1`
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  
+  /* padding: 50px; */
 
-  @media (max-width: ${Sizes.mediaQueryBreak2}) {
-    font-size: 20px;
+  overflow-y: scroll;
+
+  & .modal-content {
+    position: static;
+    width: 50%;
+    height: 100%;
+
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      width: 85%;
+    }
   }
 
-  font-size: 40px;
-  padding: 40px 0 0 0;
-  text-align: center;
+  & .modal-content img {
+    width: 100%;
+  }
+
+  & .btn-close-modal {
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    right: 1%;
+    top: 20px;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+    width: 50px;
+    height: 50px;
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      width: 25px;
+      height: 25px;
+    }
+  }
 `;
 
-const Section = () => {
+
+const Section = (props) => {
+
   return (
     <SectionStyle>
       <div className='left'>
-        <TestimonialTitleStyle>O que estão dizendo sobre meu trabalho:</TestimonialTitleStyle>
-        <Carousel itemsList={
-          Array.from({length: 8},(_, i) => {
-            return <TestimonialStyle key={i} img={`depoimentos/${i + 1}.png`} />
-          })
-        }/>
+        <img 
+          src='cifras-para-todos-os-momentos-e-tempos-liturgicos.png' 
+          alt='Cifras para todos os momentos e tempos litúrgicos' 
+        />        
       </div>
       <div className='right'>
-        <div className='quote'>
-          <div className='icon'></div>
-          <p className='text'>
-            Meu nome é Márcio, tenho {new Date().getFullYear() - 1996} anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!
+        <div className='rightContainer'>
+          <h2>E-book 13 em 1</h2>
+          <p>
+            Meus amigos, este é o nosso grande e-book 13 em 1. 
+            Ele leva esse nome porque nele estão reunidos 
+            todos os nossos e-books. Adquira agora mesmo com 50% de desconto!
           </p>
-          <div className='icon-profile'></div>
-        </div>
-
-        <div className='contactContainer'>
-          <h2>Contato</h2>
-          <a href='https://wa.me/5538997506385' className='contactItem'>
-            <div className='icon whatsapp'></div>
-            WHATSAPP
-          </a>
-          <a href='https://www.instagram.com/cifracatolicas/' className='contactItem'>
-            INSTAGRAM
-            <div className='icon instagram'></div>
-          </a>
-          <a href='https://www.youtube.com/violaocatolico' className='contactItem'>
-            <div className='icon youtube'></div>
-            YOUTUBE
-          </a>
-          <a href='https://www.tiktok.com/@cifracatolicas' className='contactItem'>
-            <div className='icon tiktok'></div>
-            TIKTOK
-          </a>
+          <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+            EU QUERO
+          </RoundedYellowEuQueroButton>
+          
         </div>
       </div>
+
+      <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
+        <button className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</button>
+        <div className='modal-content' onClick={(e) => e.stopPropagation()}>
+          {
+            Array.from({length: 25},(_, x) => {
+              return <img key={x} src={`ebooks/sumario/${x + 1}.jpg`} alt={`Sumário página ${x + 1}`} />
+            })
+          }
+        </div>
+      </ModalStyle>
     </SectionStyle>
   );
 }
+
 
 export default Section;

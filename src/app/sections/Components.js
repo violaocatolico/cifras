@@ -89,10 +89,29 @@ const RoundedWhatsappButton = styled.a`
   }
 `;
 
+const RoundedYellowEuQueroButton = styled.a`
+  transition: transform .1s;  
+  background-color: ${Colors.yellow};
+  
+  color: black;
+  text-decoration: none;
+  padding: 20px 40px;
+  border-radius: 45px;
+  width: fit-content;
+  font-weight: bold;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+`;
+
 export {
     RoundedYellowButton,
     RoundedCreamButton,
     RoundedWhiteButton,
     RoundedBlackButton,
-    RoundedWhatsappButton
+    RoundedWhatsappButton,
+    RoundedYellowEuQueroButton
 };
