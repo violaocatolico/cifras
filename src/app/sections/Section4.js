@@ -21,7 +21,8 @@ const SectionStyle = styled.section`
     align-items: center;
 
     & img {
-      width: 80%;
+      width: 100%;
+      margin: 2%;
     }
   }
 
@@ -52,23 +53,21 @@ const SectionStyle = styled.section`
     margin-top: 25px; 
     text-align: center;
     justify-items: center;
-    justify-items: center;
-    margin-top: 50px;
+    margin-top: 180px;
     margin-bottom: 35px;
-    font-weight: normal;
+    font-size: ${ Sizes.bigFontSize2};
+    font-weight: normal;  
+  };
    
     }
 
     & p {
       font-size: 1.2rem;
       color: ${ Colors.black };
-      line-height: 0.5px;
       text-align: center;
       color: black;
-      text-align: justify-all;
-
+      width: 50%;
     }
-  }
 `;
 
 const Section = (props) => {
@@ -80,16 +79,16 @@ const Section = (props) => {
           <h2>
             E-book gratuito
           </h2>
-          <p>Baixe agora mesmo nosso e-book</p>
-          <p> extra totalmente gratuito!</p>
+          <p>Baixe agora mesmo nosso e-book extra totalmente gratuito!</p>
+        
           <RoundedBlackButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
             Download grátis
           </RoundedBlackButton>
         </div>
       <div className='rigth'>
         <img 
-          src='cifras-para-todos-os-momentos-e-tempos-liturgicos.png' 
-          alt='Cifras para todos os momentos e tempos litúrgicos' 
+          src='imageSection4.webp' 
+          alt='Músicas catolicas extras' 
         />        
       </div>
       

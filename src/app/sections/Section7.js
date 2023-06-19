@@ -13,7 +13,7 @@ const SectionStyle = styled.section`
   align-items: center;
   justify-content: center;  
 
-  & h1 {
+  & h2 {
     margin-top: 50px;
     margin-bottom: 25px;
 
@@ -67,7 +67,7 @@ const Section = () => {
 
   return (
     <SectionStyle>
-        <h1>Feedbacks</h1>
+        <h2>Feedbacks</h2>
 
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras simplificadas</Button>
        

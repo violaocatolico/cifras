@@ -70,7 +70,7 @@ const ebooks = [
   },
 
   {
-    title: 'Músicas católicas extras',
+    title: 'Músicas católicas para as crianças',
     link: 'https://drive.google.com/file/d/1_GTamsgU96X89E-19EAQ0bWwO2GcR7pY/view?usp=sharing',
     image: '11.png',
   },

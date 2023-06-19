@@ -13,10 +13,11 @@ const SectionStyle = styled.section`
   align-items: center;
   justify-content: center;  
 
-  & h1 {
+  & h2 {
     margin-top: 50px;
     margin-bottom: 25px;
-
+    font-weight: normal;
+    
     @media (max-width: ${Sizes.mediaQueryBreak1}) {
       font-size: ${Sizes.bigFontSize4};
     }
@@ -26,8 +27,8 @@ const SectionStyle = styled.section`
 `;
 
 const Button = styled.a`
-  width: 450px;
-  padding: 20px;
+  width: 480px;
+  padding: 35px;
   font-size: 1.3rem;
   margin: 30px 0;
   @media (max-width: ${Sizes.mediaQueryBreak2}) {
@@ -56,8 +57,9 @@ const ButtonChannel = styled(Button)`
   background-color: black;
   color: white;
   text-align: center;
-  font-size: 1.3rem;
-  width: 450px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 480px;
   height: 40px;
   padding: 20px;
   margin: 30px 0;
@@ -67,7 +69,7 @@ const Section = () => {
 
   return (
     <SectionStyle>
-        <h1>Vantagens</h1>
+        <h2>Vantagens</h2>
 
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras simplificadas</Button>
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras corretas em cima das letras</Button>
@@ -78,7 +80,7 @@ const Section = () => {
             <div className='contactContainer'>
               <a href='https://wa.me/5538997506385' className='contactItem'>
               <div className='icon whatsapp'></div>
-              Alguma dúvida?
+              <p className='query'>Alguma dúvida?</p>
               </a>
             </div>
         </RoundedWhatsappButton>

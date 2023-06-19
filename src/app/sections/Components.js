@@ -71,7 +71,6 @@ const RoundedBlackButton = styled.a`
 const RoundedWhatsappButton = styled.a`
   transition: transform .1s;  
   background-color: ${Colors.white};
-  
   color: black;
   text-decoration: none;
   padding: 20px 40px;
@@ -79,32 +78,34 @@ const RoundedWhatsappButton = styled.a`
   width: fit-content;
   font-weight: bold;
   text-align: center;
-
-  background-image: url('whatsapp.svg');
-  left: -40px;
-  position: absolute;
+  background-image: url('whats.jpg');
+  right: -550px;
+  top: -90px;
+  bottom: 0px;
+  position: relative;
 
   &:hover {
     transform: scale(1.1);
+  }
+  & .query {
+    text-decoration: none;
   }
 `;
 
 const RoundedYellowEuQueroButton = styled.a`
   transition: transform .1s;  
   background-color: ${Colors.yellow};
-  
   color: black;
   text-decoration: none;
   padding: 20px 40px;
   border-radius: 45px;
-  width: fit-content;
+  width: 50%;
   font-weight: bold;
   text-align: center;
 
   &:hover {
     transform: scale(1.1);
   }
-
 `;
 
 export {

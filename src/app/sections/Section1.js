@@ -6,7 +6,7 @@ import { Sizes } from '../utils/sizes';
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
-  background-image: url('marcio-vieira.png');
+  background-image: url('imageSection1.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

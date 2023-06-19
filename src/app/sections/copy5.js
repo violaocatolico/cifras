@@ -7,14 +7,26 @@ import { Sizes } from '../utils/sizes';
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
-  background-color: ${ Colors.black};
+  background-color: ${ Colors.black };
   display: flex;
 
   @media (max-width: ${Sizes.mediaQueryBreak2}) {
     flex-direction: column;
   }
 
-  & .left {
+    & .left { 
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      width: 70%;
+    }
+    
+  }
+
+  & .right {
     flex: 1;
     display: flex;
     padding-top: 8vh;
@@ -29,7 +41,7 @@ const SectionStyle = styled.section`
       justify-items: center;
     }
 
-    & .leftContainer {
+    & .rightContainer {
       @media (max-width: ${Sizes.mediaQueryBreak1}) {
         width: 90%;  
       }
@@ -56,8 +68,8 @@ const SectionStyle = styled.section`
     & .timeContainer {
       display: flex;
       justify-content: center;
+    
     }
-
     & .hours {
       background-color: #745b13;
       padding: 10px, 1px, 10px, 1px;
@@ -66,8 +78,8 @@ const SectionStyle = styled.section`
       border-radius: 10px;   
       width: 15%;
       height: 5555%;
-    }
 
+    }
     & .number {
       color: white;
       font-size: 35px;
@@ -77,35 +89,23 @@ const SectionStyle = styled.section`
       right: 5px;
       padding-right: 5px;
       padding-left: 5px;
+      
+      
     }
-
     & .hoursName {
       color: white;
       font-size: 12px;
       font-weight: normal;
     }
-
     & * {
       margin: 20px 0;
     }
-
     & p {
       font-size: 1.2rem;
       color: ${ Colors.white };
       line-height: 35px;
       text-align: center;
       color: #cdcdcd;
-    }
-  }
-
-  & .right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & img {
-      width: 70%;
     }
   }
 `;
@@ -118,7 +118,7 @@ const ModalStyle = styled.div`
     }
   }};
 
-font-size: 100px;
+  font-size: 100px;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;  
   width: 100%;
@@ -170,18 +170,19 @@ font-size: 100px;
   }
 `;
 
+
 const Section = (props) => {
 
   return (
     <SectionStyle>
-      <div className='right'>
+      <div className='left'>
         <img 
           src='imageSection5.webp' 
           alt='Cifras para todos os momentos e tempos litúrgicos' 
         />        
       </div>
-      <div className='left'>
-        <div className='leftContainer'>
+      <div className='right'>
+        <div className='rightContainer'>
           <div className='counter'>
             <h4>ÚLTIMAS CHANCES PARA ADQUIRIR 
               COM 50% DE DESCONTO
@@ -201,7 +202,7 @@ const Section = (props) => {
               </div>                                                                                                                                                                                                                                                                 
             </div>
         </div>
-        <h2>E-book 13 em 1</h2>
+          <h2>E-book 13 em 1</h2>
           <p>
             Meus amigos, este é o nosso grande e-book 13
             em 1. Ele leva esse nome porque nele estão
@@ -213,6 +214,7 @@ const Section = (props) => {
         </RoundedYellowEuQueroButton>
       </div>
       </div>
+
       <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
         <button className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</button>
         <div className='modal-content' onClick={(e) => e.stopPropagation()}>
@@ -227,4 +229,5 @@ const Section = (props) => {
   );
 }
 
-export default Section;  
+
+export default Section;
