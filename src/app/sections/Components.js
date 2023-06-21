@@ -78,7 +78,7 @@ const RoundedWhatsappButton = styled.a`
   width: fit-content;
   font-weight: bold;
   text-align: center;
-  background-image: url('whats.jpg');
+  background-image: url('whats.png');
   right: -550px;
   top: -90px;
   bottom: 0px;

@@ -18,6 +18,8 @@ const SectionStyle = styled.section`
     flex: 1;
     display: flex;
     padding-top: 8vh;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       justify-content: center;
@@ -35,15 +37,18 @@ const SectionStyle = styled.section`
       }
       & h2 {
       color: white;
+      margin-top: 100px;
     }
-      width: 60%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     & h4 {
       color: black;
       text-align: center;
+      font-size: 13px;
     }
 
     & .counter {
@@ -65,7 +70,7 @@ const SectionStyle = styled.section`
       padding: 0.5px; 
       border-radius: 10px;   
       width: 15%;
-      height: 5555%;
+      box-shadow:black 0px 25px 20px -20px;
     }
 
     & .number {
@@ -81,7 +86,7 @@ const SectionStyle = styled.section`
 
     & .hoursName {
       color: white;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: normal;
     }
 
@@ -103,6 +108,7 @@ const SectionStyle = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 70px;
 
     & img {
       width: 70%;
@@ -123,7 +129,6 @@ font-size: 100px;
   position: fixed;  
   width: 100%;
   height: 100%;
-
   align-items: center;
   justify-content: center;
   top: 0;
@@ -174,12 +179,6 @@ const Section = (props) => {
 
   return (
     <SectionStyle>
-      <div className='right'>
-        <img 
-          src='imageSection5.webp' 
-          alt='Cifras para todos os momentos e tempos litúrgicos' 
-        />        
-      </div>
       <div className='left'>
         <div className='leftContainer'>
           <div className='counter'>
@@ -212,6 +211,12 @@ const Section = (props) => {
             EU QUERO
         </RoundedYellowEuQueroButton>
       </div>
+      </div>
+      <div className='right'>
+        <img 
+          src='imageSection5.webp' 
+          alt='Cifras para todos os momentos e tempos litúrgicos' 
+        />        
       </div>
       <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
         <button className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</button>
