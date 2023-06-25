@@ -30,9 +30,13 @@ const SectionStyle = styled.section`
     padding: 70px;
   }
 
-  & img {
-    margin-bottom: -4px;
-  
+  & .backgroundCover {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-image: url('backgroundCoverSection2.png');
+    background-position: center;
+    background-color: red;
   }
 
   & .black { color: ${Colors.black}; 
@@ -62,10 +66,7 @@ const Section = () => {
           Além disso, todas as músicas estão gravadas em nosso canal do YouTube, 
           que inclusive conta com mais de 20 mil inscritos e mais de 3 milhões de visualizações. 
         </p>
-        <img className='img'
-            src='imageSection1.webp'
-            alt='Imagem de um homem tocando violão'>
-        </img> 
+        <div className='backgroundCover'></div>
     </SectionStyle>
   );
 }

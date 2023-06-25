@@ -165,11 +165,10 @@ const EbookStyle = styled.a`
   }
 
   & h2 {
-    font-size: 1rem;
+    font-size: ${ Sizes.bigFontSize2};
    
   }
 `;
-
 
 
 const Section = () => {
