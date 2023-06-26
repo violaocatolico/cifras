@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 import { Colors } from '../utils/colors'
 import { Sizes } from '../utils/sizes'
-import  { RoundedWhatsappButton } from './Components';
 
 const SectionStyle = styled.section`
   width: 100%;
@@ -11,7 +10,8 @@ const SectionStyle = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
+  position: relative;
 
   & h2 {
     margin-top: 50px;
@@ -65,8 +65,35 @@ const ButtonChannel = styled(Button)`
   margin: 30px 0;
 `;
 
-const Section = () => {
+const RoundedWhatsappButton = styled.a`
+  transition: transform .1s;
+  background-color: ${Colors.white};
+  color: black;
+  text-decoration: none;
+  font-weight: bold;  
+  right: 20px;
+  bottom: 20px;
+  position: fixed;
+  z-index: 99;
+  border-radius: 45px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
 
+  & .iconWhatsapp {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    background-image: url('whatsapp.png');
+    background-size: contain;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const Section = () => {
   return (
     <SectionStyle>
         <h2>Vantagens</h2>
@@ -76,13 +103,9 @@ const Section = () => {
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Indicação rítmica em cada música</Button>
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Dicionário de acordes</Button>
         <ButtonChannel href="https://www.youtube.com/violaocatolico" target="_blank">Vídeo aula de todas as músicas em nosso canal do YouTube</ButtonChannel>
-        <RoundedWhatsappButton>
-            <div className='contactContainer'>
-              <a href='https://wa.me/5538997506385' className='contactItem'>
-              <div className='icon whatsapp'></div>
-              <p className='query'>Alguma dúvida?</p>
-              </a>
-            </div>
+        <RoundedWhatsappButton href='https://wa.me/5538997506385'>
+          <div className='iconWhatsapp'></div>
+          <p className='question'>Alguma dúvida?</p>
         </RoundedWhatsappButton>
        </SectionStyle>
   );

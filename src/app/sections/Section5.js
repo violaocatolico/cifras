@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import  { RoundedYellowEuQueroButton } from './Components';
 import { Colors } from '../utils/colors';
@@ -54,44 +54,35 @@ const SectionStyle = styled.section`
     & .counter {
       position: relative;
       background-color: #ffc10d;      
-      border-radius: 20px;
+      border-radius: 10px;
       padding: 5px;
     }
 
     & .timeContainer {
       display: flex;
-      justify-content: center;
+      width: 70%;
+      margin: 0 auto;
     }
 
     & .hours {
+      flex: 1;
       background-color: #745b13;
-      padding: 10px, 1px, 10px, 1px;
-      margin: 10px;
-      padding: 0.5px; 
-      border-radius: 10px;   
-      width: 15%;
-      box-shadow:black 0px 25px 20px -20px;
+      border-radius: 5px;   
+      box-shadow: 0px 9px 18px -4px rgba(0,0,0,0.62);
+
+      margin: 20px 10px;
     }
 
     & .number {
       color: white;
       font-size: 35px;
-      font-weight: normal;
-      margin-top: 5px;
-      margin-bottom: -20px;
-      right: 5px;
-      padding-right: 5px;
-      padding-left: 5px;
+      padding: 10px;
     }
 
     & .hoursName {
       color: white;
       font-size: 10px;
       font-weight: normal;
-    }
-
-    & * {
-      margin: 20px 0;
     }
 
     & p {
@@ -176,6 +167,37 @@ font-size: 100px;
 `;
 
 const Section = (props) => {
+  const [hours, setHours] = useState(2);
+  const [minutes, setMinutes] = useState(32);
+  const [seconds, setSeconds] = useState(12);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Update the seconds
+      if (seconds > 0) {
+        setSeconds((prevSeconds) => prevSeconds - 1);
+      } else {
+        if (minutes > 0) {
+          setSeconds(59);
+          setMinutes((prevMinutes) => prevMinutes - 1);
+        } else {
+          if (hours > 0) {
+            setSeconds(59);
+            setMinutes(59);
+            setHours((prevHours) => prevHours - 1);
+          } else {
+            clearInterval(interval);
+          }
+        }
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [seconds, minutes, hours]);
+
+  const formatTime = (value) => {
+    return value.toString().padStart(2, '0');
+  };
 
   return (
     <SectionStyle>
@@ -187,28 +209,29 @@ const Section = (props) => {
             </h4>
             <div className='timeContainer'>
               <div className='hours'>
-                <p className='number'>00</p>
+                <p className='number'>{formatTime(hours)}</p>
                 <p className='hoursName'>Horas</p>
               </div>
               <div className='hours'>
-                <p className='number'>00</p>
+                <p className='number'>{formatTime(minutes)}</p>
                 <p className='hoursName'>Minutos</p>
               </div>
               <div className='hours'>
-                <p className='number'>00</p>
+                <p className='number'>{formatTime(seconds)}</p>
                 <p className='hoursName'>Segundos</p>
               </div>                                                                                                                                                                                                                                                                 
             </div>
         </div>
         <h2>E-book 13 em 1</h2>
-          <p>
-            Meus amigos, este é o nosso grande e-book 13
-            em 1. Ele leva esse nome porque nele estão
-            reunidos todos os nossos e-books. Adquira agora
-            mesmo com 50% de desconto!
-          </p>
+        <p>
+          Meus amigos, este é o nosso grande e-book 13
+          em 1. Ele leva esse nome porque nele estão
+          reunidos todos os nossos e-books. Adquira agora
+          mesmo com 50% de desconto!
+        </p>
+        <br />
         <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-            EU QUERO
+          EU QUERO
         </RoundedYellowEuQueroButton>
       </div>
       </div>

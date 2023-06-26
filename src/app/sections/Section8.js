@@ -2,84 +2,152 @@ import React from 'react';
 import styled from 'styled-components'
 import { Colors } from '../utils/colors'
 import { Sizes } from '../utils/sizes'
-import  { RoundedWhatsappButton } from './Components';
 
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 70vh;
-  background-color: ${ Colors.yellow };
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;  
 
-  & h1 {
-    margin-top: 50px;
-    margin-bottom: 25px;
+  & .sectionLeftRight {
+    display: flex;
 
-    @media (max-width: ${Sizes.mediaQueryBreak1}) {
-      font-size: ${Sizes.bigFontSize4};
+    & h2 {
+      margin-bottom: 20px;
+      color: ${Colors.yellow};
+      font-size: ${Sizes.bigFontSize3};
     }
 
-    font-size: ${ Sizes.bigFontSize };
+    & .left {
+
+      flex: 1;
+      padding: 80px 80px;
+
+      & .aboutMe {
+        width: 50%;
+        background-color: ${Colors.yellow};
+        padding: 30px;
+        border-radius: 30px;
+        line-height: 25px;
+      }
+    }
+
+    & .right {
+      padding: 80px 80px;
+      flex: 1;
+      
+      & .contactOutline, & .socialNetworks {
+        color: white;
+        height: 50px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        padding: 0 20px;
+        border: solid 1px ${Colors.yellow};
+      }
+
+      & .contactOutline .icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: white;
+
+        &.phone {
+          background-image: url('phone.png');
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        &.phone {
+          background-image: url('phone.png');
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        &.email {
+          background-image: url('email.png');
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+      & .socialNetworks {
+        display: flex;
+        justify-content: space-between;
+        background-color: ${Colors.yellow};
+        color: black;
+        font-weight: bold;
+
+        & .linksContainer {
+          display: flex;
+
+          & a {
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &.tiktok { background-image: url('tiktok.png'); }
+            &.youtube { background-image: url('youtube.png'); }
+            &.instagram { background-image: url('instagram.png'); }
+          }
+        }
+      }
+    }
   }
+
+  & .sloganLord {
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: white;
+  }
+
+  background-image: url('imageSection8.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
-const Button = styled.a`
-  width: 450px;
-  padding: 20px;
-  font-size: 1.3rem;
-  margin: 30px 0;
-  @media (max-width: ${Sizes.mediaQueryBreak2}) {
-    width: 90%;
-    padding: 3%;
-    font-size: 1.4rem;
-    margin: 3% 0;
-  }
-
-  background-color: ${ Colors.yellow };
-  border: solid 1px black;
-  border-radius: 50px;
-  color: black;
-  text-decoration: none;
-  font-weight: normal;
-  color: black;
-  text-align: center;
-
-  &:hover {
-    background-color: #f1b300;
-  }
-`;
-
-const ButtonChannel = styled(Button)`
-  text-decoration: underline;
-  background-color: black;
-  color: white;
-  text-align: center;
-  font-size: 1.3rem;
-  width: 450px;
-  height: 40px;
-  padding: 20px;
-  margin: 30px 0;
-`;
 
 const Section = () => {
-
   return (
     <SectionStyle>
-        <h1>Contato</h1>
-
-        <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras simplificadas</Button>
-       
-        <RoundedWhatsappButton>
-            <div className='contactContainer'>
-              <a href='https://wa.me/5538997506385' className='contactItem'>
-              <div className='icon whatsapp'></div>
-              Alguma dúvida?
-              </a>
-            </div>
-        </RoundedWhatsappButton>
-       </SectionStyle>
+      <div className='sectionLeftRight'>
+        <div className='left'>
+          <h2>Sobre mim</h2>
+          <div className='aboutMe'>Meu nome é Márcio, tenho 27 anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!</div>
+        </div>
+        <div className='right'>
+          <h2>Contato</h2>
+          <div className='contactOutline'>
+            <div className='icon phone'></div>
+            <span>+55 (38) 99750-6385</span>
+          </div>
+          <div className='contactOutline'>
+            <div className='icon email'></div>
+            <span>marciovieiraguitar@gmail.com</span>
+          </div>
+          <div className='socialNetworks'>
+            <span>REDES SOCIAIS</span>
+            <div className='linksContainer'>
+              <a href='#' className='tiktok'></a>
+              <a href='#' className='youtube'></a>
+              <a href='#' className='instagram'></a>
+            </div>            
+          </div>
+        </div>
+      </div>
+      <p className='sloganLord'>"A serviço do povo de Deus"</p>
+    </SectionStyle>
   );
 }
 

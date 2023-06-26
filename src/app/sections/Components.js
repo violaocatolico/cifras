@@ -68,30 +68,6 @@ const RoundedBlackButton = styled.a`
 
 `;
 
-const RoundedWhatsappButton = styled.a`
-  transition: transform .1s;  
-  background-color: ${Colors.white};
-  color: black;
-  text-decoration: none;
-  padding: 20px 40px;
-  border-radius: 45px;
-  width: fit-content;
-  font-weight: bold;
-  text-align: center;
-  background-image: url('whats.png');
-  right: -550px;
-  top: -90px;
-  bottom: 0px;
-  position: relative;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-  & .query {
-    text-decoration: none;
-  }
-`;
-
 const RoundedYellowEuQueroButton = styled.a`
   transition: transform .1s;  
   background-color: ${Colors.yellow};
@@ -113,6 +89,5 @@ export {
     RoundedCreamButton,
     RoundedWhiteButton,
     RoundedBlackButton,
-    RoundedWhatsappButton,
     RoundedYellowEuQueroButton
 };
