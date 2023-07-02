@@ -11,14 +11,17 @@ const SectionStyle = styled.section`
   justify-content: center;
   align-items: center;
   display: block;
-  background-color: #ffc10d;  
-  
-    @media (max-width: ${Sizes.mediaQueryBreak1}) {
-      width: 95%;
-    }
+  background-color: #ffc10d;
 
   & h2 { 
     padding-top: 100px;
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      padding-top: 20px;
+      font-size: ${ Sizes.bigFontSize4};
+    }
+
+
     text-align: center;
     font-size: ${ Sizes.bigFontSize2};
     font-weight: normal;
@@ -26,8 +29,19 @@ const SectionStyle = styled.section`
 
   & p {
     font-size: 25px;
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+
     text-align: center;
     padding: 70px;
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      padding: 20px;
+    }
   }
 
   & .backgroundCover {
@@ -58,7 +72,7 @@ const SectionStyle = styled.section`
 const Section = () => {
   return (
     <SectionStyle>
-        <h2>Nosso trabalho</h2>
+        <h2 className='fontTitle'>Nosso trabalho</h2>
         <p className='textDescripition'>
           Atualmente, contamos com 13 e-books de músicas católicas e 
           cada um deles aborda um tema diferente. Todas as cifras são simplificadas, assim, 

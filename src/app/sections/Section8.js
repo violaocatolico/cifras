@@ -13,19 +13,41 @@ const SectionStyle = styled.section`
   & .sectionLeftRight {
     display: flex;
 
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      flex-direction: column;
+    }
+
     & h2 {
       margin-bottom: 20px;
       color: ${Colors.yellow};
       font-size: ${Sizes.bigFontSize3};
+
+      @media (max-width: ${Sizes.mediaQueryBreak1}) {
+        font-size: ${Sizes.bigFontSize4};
+        text-align: center;
+      }
+    }
+    
+    & .left, & .right {
+      padding: 80px 80px;
+
+      @media (max-width: ${Sizes.mediaQueryBreak1}) {
+        padding: 10px 10px;
+      }
     }
 
     & .left {
-
       flex: 1;
-      padding: 80px 80px;
 
       & .aboutMe {
         width: 50%;
+
+        @media (max-width: ${Sizes.mediaQueryBreak1}) {
+          width: 90%;
+          padding: 15px;
+          margin: 0 auto;
+        }
+
         background-color: ${Colors.yellow};
         padding: 30px;
         border-radius: 30px;
@@ -34,11 +56,16 @@ const SectionStyle = styled.section`
     }
 
     & .right {
-      padding: 80px 80px;
       flex: 1;
       
       & .contactOutline, & .socialNetworks {
         color: white;
+        width: 100%;
+
+        @media (max-width: ${Sizes.mediaQueryBreak3}) {
+          width: 90%;
+        }
+
         height: 50px;
         margin-bottom: 20px;
         display: flex;
@@ -109,6 +136,7 @@ const SectionStyle = styled.section`
     font-size: 1.3rem;
     font-style: italic;
     color: white;
+    margin: 40px 0;
   }
 
   background-image: url('imageSection8.webp');
@@ -123,11 +151,11 @@ const Section = () => {
     <SectionStyle>
       <div className='sectionLeftRight'>
         <div className='left'>
-          <h2>Sobre mim</h2>
+          <h2 className='fontTitle'>Sobre mim</h2>
           <div className='aboutMe'>Meu nome é Márcio, tenho 27 anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!</div>
         </div>
         <div className='right'>
-          <h2>Contato</h2>
+          <h2 className='fontTitle'>Contato</h2>
           <div className='contactOutline'>
             <div className='icon phone'></div>
             <span>+55 (38) 99750-6385</span>
@@ -146,7 +174,7 @@ const Section = () => {
           </div>
         </div>
       </div>
-      <p className='sloganLord'>"A serviço do povo de Deus"</p>
+      <p className='sloganLord fontCoursive'>"A serviço do povo de Deus"</p>
     </SectionStyle>
   );
 }

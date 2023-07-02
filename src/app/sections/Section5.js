@@ -204,9 +204,7 @@ const Section = (props) => {
       <div className='left'>
         <div className='leftContainer'>
           <div className='counter'>
-            <h4>ÚLTIMAS CHANCES PARA ADQUIRIR 
-              COM 50% DE DESCONTO
-            </h4>
+            <h4>ÚLTIMAS CHANCES PARA ADQUIRIR COM 50% DE DESCONTO</h4>
             <div className='timeContainer'>
               <div className='hours'>
                 <p className='number'>{formatTime(hours)}</p>

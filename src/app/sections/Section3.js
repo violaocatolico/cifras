@@ -85,6 +85,10 @@ const SectionStyle = styled.section`
   align-items: center;
   position: relative;
 
+  @media (min-width: ${Sizes.mediaQueryBreak4}) {
+    padding-bottom: 50px;
+  }
+
   & .ebooksList {
     width: 80%;
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
@@ -97,7 +101,7 @@ const SectionStyle = styled.section`
   }
 
   & > h2 {
-    color: ${ Colors.white };
+    color: ${ Colors.yellow };
     margin-top: 50px;
     margin-bottom: 25px;
     font-size: ${ Sizes.bigFontSize2};
@@ -105,12 +109,12 @@ const SectionStyle = styled.section`
 
     @media (max-width: ${Sizes.mediaQueryBreak1}) {
       font-size: ${Sizes.bigFontSize4};
+      margin-top: 20px;
     }
   }
 
   & .btnYellow {
     margin: 30px;
-    text-align: justify-all;
     font-size: 15px;
     padding: 10px;
 
@@ -132,16 +136,18 @@ const SectionStyle = styled.section`
     }
   }
 }
+
 & .digitalFilesText {
     color: white;
     font-size: 15px;
     position: absolute;
     right: 120px;
-    
-    
     bottom: 100px;
-    
 
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      right: 10px;
+      bottom: 10px;
+    }
 }
 `;
 
@@ -166,15 +172,13 @@ const EbookStyle = styled.a`
 
   & h2 {
     font-size: ${ Sizes.bigFontSize2};
-   
   }
 `;
-
 
 const Section = () => {
   return (
     <SectionStyle>
-        <h2>E-books</h2>
+        <h2 className='fontTitle'>E-books</h2>
 
         <div className='ebooksList'>
           { ebooks.map((ebook, index) => (

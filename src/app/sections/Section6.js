@@ -13,6 +13,10 @@ const SectionStyle = styled.section`
   justify-content: center;
   position: relative;
 
+  @media (max-width: ${Sizes.mediaQueryBreak1}) {
+    padding-bottom: 50px;
+  }
+
   & h2 {
     margin-top: 50px;
     margin-bottom: 25px;
@@ -20,6 +24,7 @@ const SectionStyle = styled.section`
     
     @media (max-width: ${Sizes.mediaQueryBreak1}) {
       font-size: ${Sizes.bigFontSize4};
+      margin-top: 20px;
     }
 
     font-size: ${ Sizes.bigFontSize };
@@ -53,6 +58,12 @@ const Button = styled.a`
 `;
 
 const ButtonChannel = styled(Button)`
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    width: 90%;
+    padding: 3%;
+    font-size: 1.4rem;
+    margin: 3% 0;
+  }
   text-decoration: underline;
   background-color: black;
   color: white;
@@ -60,7 +71,6 @@ const ButtonChannel = styled(Button)`
   font-weight: bold;
   font-size: 1.2rem;
   width: 480px;
-  height: 40px;
   padding: 20px;
   margin: 30px 0;
 `;
@@ -96,7 +106,7 @@ const RoundedWhatsappButton = styled.a`
 const Section = () => {
   return (
     <SectionStyle>
-        <h2>Vantagens</h2>
+        <h2 className='fontTitle'>Vantagens</h2>
 
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras simplificadas</Button>
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras corretas em cima das letras</Button>

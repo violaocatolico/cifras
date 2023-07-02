@@ -19,14 +19,31 @@ const SectionStyle = styled.section`
     
   & h2 {
      text-align: center;
-     color: white;
-     font-size: ${ Sizes.bigFontSize2};
+     color: ${Colors.yellow};
+     font-size: ${ Sizes.bigFontSize2 };
      margin-bottom: 80px;
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      font-size: ${ Sizes.bigFontSize4 };
+      margin-top: 20px;
+      margin-bottom: 40px;
+    } 
   }
 
   & .containerFeedback {
     display: flex;
     justify-content: center;
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      flex-direction: column;
+
+      align-items: center;
+
+      .feedback {
+        width: 80% !important;
+        margin: 40px 0 !important;
+      }
+    }
 
     & .feedback {
       display: flex;
@@ -77,7 +94,7 @@ const SectionStyle = styled.section`
 const Section = () => {
   return (
     <SectionStyle>
-      <h2>Feedbacks</h2>
+      <h2 className='fontTitle'>Feedbacks</h2>
       <div className='containerFeedback'>
         <div className='feedback'>
           <div className='userImage userImage1'></div>

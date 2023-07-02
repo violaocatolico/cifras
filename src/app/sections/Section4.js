@@ -9,90 +9,77 @@ const SectionStyle = styled.section`
   min-height: 90vh;
   background-color: ${ Colors.yellow };
   display: flex;
+  flex-direction: row;
+
+  & .left, & .right {
+    flex: 1;
+  }
+
+  & .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      padding-top: 20px;
+    }
+  }
+
+  & .right {
+    
+  }
+
+  & img {
+    width: 100%;
+  }
 
   @media (max-width: ${Sizes.mediaQueryBreak2}) {
     flex-direction: column;
   }
 
-  & .rigth {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & img {
-      width: 100%;
-      margin: 2%;
-    }
-  }
-
-  & .right {
-    flex: 1;
-    display: flex;
-    padding-top: 8vh;
-
-    @media (max-width: ${Sizes.mediaQueryBreak2}) {
-      justify-content: center;
-    }
-
-    & .rightContainer {
-      @media (max-width: ${Sizes.mediaQueryBreak1}) {
-        width: 90%;  
-      }
-      width: 60%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    & * {
-      margin: 20px 0;
-    }
-
-    & h2 {
+  & h2 {
     margin-top: 25px; 
     text-align: center;
     justify-items: center;
     margin-top: 180px;
     margin-bottom: 35px;
-    font-size: ${ Sizes.bigFontSize2};
-    font-weight: normal;  
-  };
-   
+    font-size: ${ Sizes.bigFontSize2 };
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      margin-top: 0;
+      font-size: ${Sizes.bigFontSize4};
+    }
+  }
+
+  & p {
+    font-size: 1.2rem;
+    color: ${ Colors.black };
+    text-align: center;
+    color: black;
+    width: 50%;
+
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      width: 90%;
     }
 
-    & p {
-      font-size: 1.2rem;
-      color: ${ Colors.black };
-      text-align: center;
-      color: black;
-      width: 50%;
-    }
+    margin: 0 auto 50px auto;
+  }
 `;
 
 const Section = (props) => {
-
   return (
     <SectionStyle>
+      <div className='left'>
+        <h2 className='fontTitle'>E-book gratuito</h2>
+        <p>Baixe agora mesmo nosso e-book extra totalmente gratuito!</p>
+      
+        <RoundedBlackButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+          Download grátis
+        </RoundedBlackButton>
+      </div>
       <div className='right'>
-        <div className='rightContainer'>
-          <h2>
-            E-book gratuito
-          </h2>
-          <p>Baixe agora mesmo nosso e-book extra totalmente gratuito!</p>
-        
-          <RoundedBlackButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-            Download grátis
-          </RoundedBlackButton>
-        </div>
-      <div className='rigth'>
-        <img 
-          src='imageSection4.webp' 
-          alt='Músicas catolicas extras' 
-        />        
+        <img src='imageSection4.webp' alt='Músicas catolicas extras' />
       </div>
       
-      </div>
 
       <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
         <button className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</button>
@@ -128,8 +115,6 @@ const ModalStyle = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  
-  /* padding: 50px; */
 
   overflow-y: scroll;
 
@@ -148,8 +133,5 @@ const ModalStyle = styled.div`
   }
 
 `;
-
-
-
 
 export default Section;

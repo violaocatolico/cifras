@@ -16,7 +16,6 @@ const RoundedYellowButton = styled.a`
   &:hover {
     transform: scale(1.1);
   }
-
 `;
 
 const RoundedCreamButton = styled.a`
@@ -26,7 +25,6 @@ const RoundedCreamButton = styled.a`
   text-decoration: none;
   padding: 20px 20px;
   border-radius: 45px;
-  width: 280px;
   font-weight: bold;
   text-align: center;
 

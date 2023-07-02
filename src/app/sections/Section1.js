@@ -13,6 +13,7 @@ const SectionStyle = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   
   & .sectionText {
     position: relative;
@@ -28,7 +29,7 @@ const SectionStyle = styled.section`
 
   & h1 > * {
     font-size: ${Sizes.bigFontSize};
-    font-weight: bolder;
+    line-height: 4.3rem;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       font-size: ${Sizes.bigFontSize2};
@@ -44,13 +45,14 @@ const SectionStyle = styled.section`
   }
 
   & h2 { margin-top: 25px; }
-  & h4 {
-    font-size: ${Sizes.smallFontSize};
-    font-weight: normal;
+  & .biggestCollection {
     text-align: center;
-    font-style: italic;
     margin-top: 100px;
-    margin-bottom: 35px;
+    font-size: ${Sizes.bigFontSize4};
+
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      font-size: 1.3rem;
+    }
   }
 `;
 
@@ -59,20 +61,18 @@ const Section = () => {
     <SectionStyle>
       <div className='sectionText'>
         <h1>
-          <div className='yellow'>Cifras católicas</div>
-          <div className='white'>de músicas para</div>
-          <div className='yellow'>vários momentos</div>
-          <div className='white'>da igreja</div>
+          <div className='yellow fontTitle'>Cifras católicas</div>
+          <div className='white fontTitle'>de músicas para</div>
+          <div className='yellow fontTitle'>vários momentos</div>
+          <div className='white fontTitle'>da igreja</div>
         </h1>
 
         <h2>
           <div className='white'>ESPECIAL 13 em 1</div>
           <div className='yellow'>MÁRCIO DE JESUS VIEIRA</div>
         </h2>
-        <h4>
-          <div className='white'> O maior acervo de músicas católicas do Brasil</div>
-        </h4>
       </div>
+      <p className='biggestCollection white fontCoursive'>O maior acervo de músicas católicas do Brasil</p>
     </SectionStyle>
   );
 }
