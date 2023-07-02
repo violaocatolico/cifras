@@ -57,12 +57,15 @@ const SectionStyle = styled.section`
 
     & .right {
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       
       & .contactOutline, & .socialNetworks {
         color: white;
-        width: 100%;
+        width: 50%;
 
-        @media (max-width: ${Sizes.mediaQueryBreak3}) {
+        @media (max-width: ${Sizes.mediaQueryBreak2}) {
           width: 90%;
         }
 
