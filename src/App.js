@@ -17,9 +17,9 @@ function App() {
       <GlobalStyle modalShow={modalShow} />
       <Section1 />
       <Section2 />
-      <Section3 />
+      <Section3 modalShow={modalShow} setModalShow={setModalShow}/>
       <Section4 />
-      <Section5 modalShow={modalShow} setModalShow={setModalShow}/>
+      <Section5 />
       <Section6 />
       <Section7 />
       <Section8 />

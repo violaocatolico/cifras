@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Colors } from '../utils/colors'
+import { Sizes } from '../utils/sizes';
 
 const RoundedYellowButton = styled.a`
   transition: transform .1s;  
@@ -27,6 +28,10 @@ const RoundedCreamButton = styled.a`
   border-radius: 45px;
   font-weight: bold;
   text-align: center;
+
+  @media (max-width: ${Sizes.mediaQueryBreak4}) {
+    width: 70%;
+  }
 
   &:hover {
     transform: scale(1.1);

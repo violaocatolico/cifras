@@ -170,9 +170,9 @@ const Section = () => {
           <div className='socialNetworks'>
             <span>REDES SOCIAIS</span>
             <div className='linksContainer'>
-              <a href='#' className='tiktok'></a>
-              <a href='#' className='youtube'></a>
-              <a href='#' className='instagram'></a>
+              <a href='https://www.tiktok.com/@cifracatolicas' className='tiktok'></a>
+              <a href='https://www.youtube.com/violaocatolico' className='youtube'></a>
+              <a href='https://www.instagram.com/cifracatolicas/' className='instagram'></a>
             </div>            
           </div>
         </div>

@@ -12,6 +12,7 @@ const SectionStyle = styled.section`
   align-items: center;
   display: block;
   background-color: #ffc10d;
+  position: relative;
 
   & h2 { 
     padding-top: 100px;
@@ -50,7 +51,8 @@ const SectionStyle = styled.section`
     background-size: cover;
     background-image: url('backgroundCoverSection2.png');
     background-position: center;
-    background-color: red;
+    position: absolute;
+    bottom: -1px;
   }
 
   & .black { color: ${Colors.black}; 
