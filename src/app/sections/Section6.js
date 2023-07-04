@@ -6,7 +6,7 @@ import { Sizes } from '../utils/sizes'
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 70vh;
-  background-color: ${ Colors.black };
+  background-color: ${ Colors.dark };
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@ const Button = styled.a`
     margin: 3% 0;
   }
 
-  background-color: black;
+  background-color: ${ Colors.dark };
   border: solid 1px ${ Colors.yellow };
   border-radius: 50px;
   color: ${ Colors.yellow };
@@ -52,7 +52,7 @@ const Button = styled.a`
 
   &:hover {
     background-color: ${ Colors.yellow };
-    color: black;
+    color: ${ Colors.dark };
   }
 `;
 
@@ -64,7 +64,7 @@ const ButtonChannel = styled(Button)`
     margin: 3% 0;
   }
   text-decoration: underline;
-  background-color: black;
+  background-color: ${ Colors.dark };
   color: white;
   text-align: center;
   font-weight: bold;
@@ -77,7 +77,7 @@ const ButtonChannel = styled(Button)`
 const RoundedWhatsappButton = styled.a`
   transition: transform .1s;
   background-color: ${Colors.white};
-  color: black;
+  color: ${ Colors.dark };
   text-decoration: none;
   font-weight: bold;  
   right: 20px;

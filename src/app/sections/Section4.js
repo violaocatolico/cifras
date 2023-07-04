@@ -35,9 +35,9 @@ const SectionStyle = styled.section`
 
   & p {
     font-size: 1.2rem;
-    color: ${ Colors.black };
+    color: ${ Colors.dark };
     text-align: center;
-    color: black;
+    color: ${ Colors.dark };
     width: 50%;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {

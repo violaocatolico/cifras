@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
 import  { RoundedYellowButton } from './Components';
-import  { RoundedCreamButton } from './Components';
 import { Colors } from '../utils/colors'
 import { Sizes } from '../utils/sizes'
 
@@ -79,7 +78,7 @@ const ebooks = [
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
-  background-color: ${ Colors.black };
+  background-color: ${ Colors.dark };
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,7 +154,7 @@ const SectionStyle = styled.section`
 
 const EbookStyle = styled.a`
   transition: transform .1s;
-  background-color: ${ Colors.black };
+  background-color: ${ Colors.dark };
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -251,17 +250,15 @@ const Section = (props) => {
             />
           )) }
         </div>
-        <RoundedCreamButton onClick={(e) => {
+
+        <br /><br /><br />
+        <RoundedYellowButton onClick={(e) => {
           e.preventDefault();
           props.setModalShow(true);
         }} className="btnCream" href="#">
-          Confira as músicas disponíveis
-        </RoundedCreamButton>
-
-        <RoundedYellowButton className="btnYellow" href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-          QUERO ADQUIRIR TODOS DE UMA 
-          SÓ VEZ COM 50% DE DESCONTO
+          Confira as músicas disponíveis AQUI
         </RoundedYellowButton>
+
         <p className='digitalFilesText'>
           *arquivos digitais
         </p>

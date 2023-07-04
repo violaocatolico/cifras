@@ -7,7 +7,7 @@ const SectionStyle = styled.section`
   position: relative;
   width: 100%;
   min-height: 70vh;
-  background-color: ${ Colors.black };
+  background-color: ${ Colors.dark };
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,16 +77,10 @@ const SectionStyle = styled.section`
         border-radius: 50%;
       }
 
-      & .userImage1 {
-        background-image: url('user-feedback-1.jpeg');
-      }
-      & .userImage2 {
-        background-image: url('user-feedback-2.jpeg');
-      }
-      & .userImage3 {
-        background-image: url('user-feedback-3.jpeg');
-      }
-
+      & .userImage1 { background-image: url('user-feedback-1.jpeg'); }
+      & .userImage2 { background-image: url('user-feedback-2.png'); }
+      & .userImage3 { background-image: url('user-feedback-3.png'); }
+      & .userImage4 { background-image: url('user-feedback-4.png'); }
     }
   }
 `;
@@ -119,6 +113,15 @@ const Section = () => {
             gostei muito das cifras e ritmos simplificados.” 
           </p>
           <p className='namePeople'>- Carlos -</p>
+        </div>
+
+        <div className='feedback'>
+          <div className='userImage userImage4'></div>
+          <p className='depoiment'>
+            Olá Márcio, tudo bem? Encontrei você no YouTube agora e gostei do seu trabalho. Estava procurando uma aula de violão para a música Corpo Santo da Fátima Souza. Sua didática é muito boa. Eu já tentei aprender tocar violão mas sempre me enrolo e não vou pra frente. 
+            Vou tentar novamente com a sua didática. Acabei de comprar seus ebooks e também achei super organizado. 
+          </p>
+          <p className='namePeople'>- Camila -</p>
         </div>
       </div>
     </SectionStyle>

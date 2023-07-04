@@ -7,7 +7,7 @@ import { Sizes } from '../utils/sizes';
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
-  background-color: ${ Colors.black};
+  background-color: ${ Colors.dark };
   display: flex;
 
   @media (max-width: ${Sizes.mediaQueryBreak2}) {

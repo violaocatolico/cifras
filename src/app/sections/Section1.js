@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import { Sizes } from '../utils/sizes';
+import { Colors } from '../utils/colors';
 
 const SectionStyle = styled.section`
   width: 100%;
@@ -13,6 +14,15 @@ const SectionStyle = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  & .gradientBg {
+    width: 100%;
+    height: 90vh;
+    background: ${Colors.dark};
+    background: linear-gradient(90deg,#141414 0%,#14141400 50%);
+    position: absolute;
+    top: 0;
+  }
   
   & .sectionText {
     position: relative;
@@ -121,15 +131,16 @@ const Section = () => {
 
   return (
     <SectionStyle>
+      <div className='gradientBg'></div>
       <div className='sectionText'>
         <h1>
           <div className='yellow fontTitle'>Cifras católicas</div>
           <div className='white fontTitle'>para momentos</div>
-          <div className='yellow fontTitle'>sagrados na igreja</div>
+          <div className='white fontTitle'><span className='yellow'>sagrados</span> na igreja</div>
         </h1>
 
         <h2 className='yellow fontTitle'>Especial 13 em 1</h2>
-        <p className='white moreThan13Ebooks'>São 13 e-books! Mais de 500 cifras de todos os tempos litúrgicos na palma da sua mão!</p>
+        <p className='white moreThan13Ebooks'>São <span className='yellow'>13 e-books!</span> Mais de 500 cifras de todos os tempos litúrgicos na palma da sua mão!</p>
 
 
         <div className='counter'>

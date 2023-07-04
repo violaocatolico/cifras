@@ -92,7 +92,7 @@ const SectionStyle = styled.section`
         display: flex;
         justify-content: space-between;
         background-color: ${Colors.yellow};
-        color: black;
+        color: ${ Colors.dark };
         font-weight: bold;
 
         & .linksContainer {

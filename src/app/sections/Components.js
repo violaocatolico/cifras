@@ -6,7 +6,7 @@ const RoundedYellowButton = styled.a`
   transition: transform .1s;  
   background-color: ${Colors.yellow};
   
-  color: black;
+  color: ${ Colors.dark };
   text-decoration: underline;
   padding: 20px 40px;
   border-radius: 45px;
@@ -22,7 +22,7 @@ const RoundedYellowButton = styled.a`
 const RoundedCreamButton = styled.a`
   transition: transform .1s;  
   background-color: ${Colors.white2};
-  color: black;
+  color: ${ Colors.dark };
   text-decoration: none;
   padding: 20px 20px;
   border-radius: 45px;
@@ -55,7 +55,7 @@ const RoundedWhiteButton = styled.a`
 
 const RoundedBlackButton = styled.a`
   transition: transform .1s;  
-  background-color: ${Colors.black};
+  background-color: ${Colors.dark};
   
   color: white;
   text-decoration: none;
@@ -74,7 +74,7 @@ const RoundedBlackButton = styled.a`
 const RoundedYellowEuQueroButton = styled.a`
   transition: transform .1s;  
   background-color: ${Colors.yellow};
-  color: black;
+  color: ${ Colors.dark };
   text-decoration: none;
   padding: 20px 40px;
   border-radius: 45px;

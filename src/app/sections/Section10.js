@@ -7,7 +7,7 @@ const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
   background-color: ${ Colors.yellow };
-  color: black;
+  color: ${ Colors.dark };
   display: flex;
 
   p.fontTitle {
@@ -67,10 +67,7 @@ const Section = () => {
         </p>
       </div>
       <div className='right'>
-        <img 
-          src='channel.png' 
-          alt='Cifras para todos os momentos e tempos litúrgicos' 
-        />        
+        <img src='channel.png' alt='Cifras para todos os momentos e tempos litúrgicos' />
       </div>
     </SectionStyle>
   );

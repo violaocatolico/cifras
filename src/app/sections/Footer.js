@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Colors } from '../utils/colors'
 
 const FooterStyle = styled.div`
-  background-color: ${ Colors.black };
+  background-color: ${ Colors.dark };
   height: 70px;
   display: flex;
   justify-content: flex-end;
