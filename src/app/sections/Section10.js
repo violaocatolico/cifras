@@ -1,14 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
-import  { RoundedYellowEuQueroButton } from './Components';
 import { Colors } from '../utils/colors';
 import { Sizes } from '../utils/sizes';
 
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
-  background-color: ${ Colors.black};
+  background-color: ${ Colors.yellow };
+  color: black;
   display: flex;
+
+  p.fontTitle {
+    font-size: medium;
+  }
+
+  h4.fontTitle {
+    font-size: 20px;
+  }
+
+  h1.fontTitle {
+    font-size: ${Sizes.bigFontSize};
+  }
+
+  p {
+    line-height: 30px;
+  }
 
   @media (max-width: ${Sizes.mediaQueryBreak2}) {
     flex-direction: column;
@@ -23,12 +39,6 @@ const SectionStyle = styled.section`
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       justify-content: center;
-    }
-
-    .fontTitle {
-      color: white;
-      font-size: ${Sizes.bigFontSize3};
-      width: 65%;
     }
   }
 
@@ -49,17 +59,16 @@ const Section = () => {
   return (
     <SectionStyle>
       <div className='left'>        
-        <h1 className='fontTitle'>
-          Para quem deseja elevar o nível do ministério de música.
-        </h1>
-        <br />
-        <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-          EU QUERO
-        </RoundedYellowEuQueroButton>
+        <p className='fontTitle'>Quem sou eu?</p>
+        <h4 className='fontTitle'>Prazer, eu sou</h4>
+        <h1 className='fontTitle'>Márcio</h1>
+        <p>
+          Quero te mostrar que é possível tocar violão sem complicação! Depois de 15 anos tocando resolvi ajudar a quem quiser aprender. Já gravei mais de 2 mil videoaulas em meu canal inserir link do canal ensinando a tocar de maneira fácil e prática.
+        </p>
       </div>
       <div className='right'>
         <img 
-          src='imageSection5.webp' 
+          src='channel.png' 
           alt='Cifras para todos os momentos e tempos litúrgicos' 
         />        
       </div>

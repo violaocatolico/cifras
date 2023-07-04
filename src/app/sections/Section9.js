@@ -27,8 +27,14 @@ const SectionStyle = styled.section`
 
     .fontTitle {
       color: white;
-      font-size: ${Sizes.bigFontSize3};
+      font-size: ${Sizes.bigFontSize4};
       width: 65%;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: white;
     }
   }
 
@@ -50,16 +56,20 @@ const Section = () => {
     <SectionStyle>
       <div className='left'>        
         <h1 className='fontTitle'>
-          Para quem deseja elevar o nível do ministério de música.
+          Através da música os momentos na igreja podem ganhar outro patamar.
         </h1>
+        <p>
+          Seja responsável por esta mudança, aprenda a tocar em todas as situações, em todos os tempos litúrgicos, em todos os momentos da Santa Missa! Aproveita a oportunidade única de levar todos os meus e-books pela metade do preço!
+        </p>
+        <br />
         <br />
         <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-          EU QUERO
+          Quero garantir o meu
         </RoundedYellowEuQueroButton>
       </div>
       <div className='right'>
         <img 
-          src='imageSection5.webp' 
+          src='hostia.png' 
           alt='Cifras para todos os momentos e tempos litúrgicos' 
         />        
       </div>

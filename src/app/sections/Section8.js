@@ -36,25 +36,6 @@ const SectionStyle = styled.section`
       }
     }
 
-    & .left {
-      flex: 1;
-
-      & .aboutMe {
-        width: 50%;
-
-        @media (max-width: ${Sizes.mediaQueryBreak1}) {
-          width: 90%;
-          padding: 15px;
-          margin: 0 auto;
-        }
-
-        background-color: ${Colors.yellow};
-        padding: 30px;
-        border-radius: 30px;
-        line-height: 25px;
-      }
-    }
-
     & .right {
       flex: 1;
       display: flex;
@@ -63,7 +44,7 @@ const SectionStyle = styled.section`
       
       & .contactOutline, & .socialNetworks {
         color: white;
-        width: 50%;
+        width: 30%;
 
         @media (max-width: ${Sizes.mediaQueryBreak2}) {
           width: 90%;
@@ -153,10 +134,6 @@ const Section = () => {
   return (
     <SectionStyle>
       <div className='sectionLeftRight'>
-        <div className='left'>
-          <h2 className='fontTitle'>Sobre mim</h2>
-          <div className='aboutMe'>Meu nome é Márcio, tenho 27 anos e sou de Montes Claros, no norte de Minas Gerais. Toco violão há mais de 15 anos e estou aqui para ajudá-los!</div>
-        </div>
         <div className='right'>
           <h2 className='fontTitle'>Contato</h2>
           <div className='contactOutline'>

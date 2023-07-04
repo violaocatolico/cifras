@@ -100,17 +100,19 @@ const SectionStyle = styled.section`
     justify-content: center;
   }
 
-  & > h2 {
-    color: ${ Colors.yellow };
+  & > h3 {
+    width: 40%;
+    @media (max-width: ${Sizes.mediaQueryBreak1}) {
+      width: 90%;
+      margin-top: 90px;
+    }
+
+    text-align: center;
+    color: ${ Colors.white };
     margin-top: 50px;
     margin-bottom: 25px;
-    font-size: ${ Sizes.bigFontSize2};
+    font-size: ${ Sizes.bigFontSize4};
     font-weight: normal;
-
-    @media (max-width: ${Sizes.mediaQueryBreak1}) {
-      font-size: ${Sizes.bigFontSize4};
-      margin-top: 20px;
-    }
   }
 
   & .btnYellow {
@@ -237,7 +239,7 @@ font-size: 100px;
 const Section = (props) => {
   return (
     <SectionStyle>
-        <h2 className='fontTitle'>E-books</h2>
+        <h3 className='fontTitle'>Se preferir, <span className='yellow'>pode adquirir</span> o seu preferido <span className='yellow'>individualmente</span></h3>
 
         <div className='ebooksList'>
           { ebooks.map((ebook, index) => (

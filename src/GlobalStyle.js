@@ -1,5 +1,6 @@
 // globalStyles.js
 import { createGlobalStyle } from 'styled-components';
+import { Colors } from './app/utils/colors';
  
 const GlobalStyle = createGlobalStyle`
   /* Reset CSS */
@@ -33,10 +34,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Parisienne', sans-serif;
   }
 
-  .fontTitle {
+  .fontTitle, .fontTitle * {
     font-family: 'PT_Serif', sans-serif;
     font-weight: lighter;
   }
+
+  .yellow { color: ${Colors.yellow}; }
+  .white { color: ${Colors.white}; }
 `;
  
 export default GlobalStyle;

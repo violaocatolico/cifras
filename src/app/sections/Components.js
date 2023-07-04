@@ -78,7 +78,7 @@ const RoundedYellowEuQueroButton = styled.a`
   text-decoration: none;
   padding: 20px 40px;
   border-radius: 45px;
-  width: 50%;
+  width: 30%;
   font-weight: bold;
   text-align: center;
 

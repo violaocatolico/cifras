@@ -6,30 +6,17 @@ import { Sizes } from '../utils/sizes';
 
 const SectionStyle = styled.section`
   width: 100%;
-  min-height: 90vh;
+  padding-bottom: 70px;
   background-color: ${ Colors.yellow };
   display: flex;
-  flex-direction: row;
-
-  & .left, & .right {
-    flex: 1;
-  }
-
-  & .left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @media (max-width: ${Sizes.mediaQueryBreak2}) {
-      padding-top: 20px;
-    }
-  }
-
-  & .right {
-    
-  }
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 
   & img {
-    width: 100%;
+    width: 200px;
+    margin-top: 30px;
+    margin-bottom: 20px;
   }
 
   @media (max-width: ${Sizes.mediaQueryBreak2}) {
@@ -37,15 +24,11 @@ const SectionStyle = styled.section`
   }
 
   & h2 {
-    margin-top: 25px; 
     text-align: center;
-    justify-items: center;
-    margin-top: 180px;
-    margin-bottom: 35px;
-    font-size: ${ Sizes.bigFontSize2 };
+    font-size: ${ Sizes.bigFontSize3 };
+    font-weight: lighter;
 
     @media (max-width: ${Sizes.mediaQueryBreak1}) {
-      margin-top: 0;
       font-size: ${Sizes.bigFontSize4};
     }
   }
@@ -65,73 +48,19 @@ const SectionStyle = styled.section`
   }
 `;
 
-const Section = (props) => {
+const Section = () => {
   return (
     <SectionStyle>
-      <div className='left'>
-        <h2 className='fontTitle'>E-book gratuito</h2>
-        <p>Baixe agora mesmo nosso e-book extra totalmente gratuito!</p>
-      
-        <RoundedBlackButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-          Download grátis
-        </RoundedBlackButton>
-      </div>
-      <div className='right'>
-        <img src='imageSection4.webp' alt='Músicas catolicas extras' />
-      </div>
-      
+      <h2 className='fontTitle'>Quer conhecer o meu trabalho?  </h2> 
+      <h2 className='fontTitle'>Baixe meu e-book extra totalmente gratuito!</h2>
+    
+      <img src='ebook-free.png' alt='Músicas catolicas extras' />
 
-      <ModalStyle modalShow={props.modalShow} onClick={() => props.setModalShow(false)}>
-        <button className='btn-close-modal' onClick={(e) => e.preventDefault()}>X</button>
-        <div className='modal-content' onClick={(e) => e.stopPropagation()}>
-          {
-            Array.from({length: 25},(_, x) => {
-              return <img key={x} src={`ebooks/sumario/${x + 1}.jpg`} alt={`Sumário página ${x + 1}`} />
-            })
-          }
-        </div>
-      </ModalStyle>
+      <RoundedBlackButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+        Download grátis
+      </RoundedBlackButton>
     </SectionStyle>
   );
 }
-
-const ModalStyle = styled.div`
-  display: flex;
-  ${(props) => {
-    if (!props.modalShow) {
-      return `display: none;`;
-    }
-  }};
-
-  font-size: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;  
-  width: 100%;
-  height: 100%;
-
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-
-  overflow-y: scroll;
-
-  & .modal-content {
-    position: static;
-    width: 50%;
-    height: 100%;
-
-    @media (max-width: ${Sizes.mediaQueryBreak2}) {
-      width: 85%;
-    }
-  }
-
-  & .modal-content img {
-    width: 100%;
-  }
-
-`;
 
 export default Section;

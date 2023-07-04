@@ -6,7 +6,7 @@ import { Sizes } from '../utils/sizes'
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 70vh;
-  background-color: ${ Colors.yellow };
+  background-color: ${ Colors.black };
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,17 +43,16 @@ const Button = styled.a`
     margin: 3% 0;
   }
 
-  background-color: ${ Colors.yellow };
-  border: solid 1px black;
+  background-color: black;
+  border: solid 1px ${ Colors.yellow };
   border-radius: 50px;
-  color: black;
+  color: ${ Colors.yellow };
   text-decoration: none;
-  font-weight: normal;
-  color: black;
   text-align: center;
 
   &:hover {
-    background-color: #f1b300;
+    background-color: ${ Colors.yellow };
+    color: black;
   }
 `;
 
@@ -106,7 +105,7 @@ const RoundedWhatsappButton = styled.a`
 const Section = () => {
   return (
     <SectionStyle>
-        <h2 className='fontTitle'>Vantagens</h2>
+        <h2 className='fontTitle yellow copy-text'>Benefícios</h2>
 
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras simplificadas</Button>
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras corretas em cima das letras</Button>
