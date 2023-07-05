@@ -73,6 +73,11 @@ const SectionStyle = styled.section`
       }
     }
   }
+
+  .linkStyle {
+    color: black;
+    font-weight: bolder;
+  }
 `;
 
 const Section = () => {
@@ -83,7 +88,7 @@ const Section = () => {
         <h4 className='fontTitle'>Prazer, eu sou</h4>
         <h1 className='fontTitle'>Márcio</h1>
         <p>
-          Quero te mostrar que é possível tocar violão sem complicação! Depois de 15 anos tocando resolvi ajudar a quem quiser aprender. Já gravei mais de 2 mil videoaulas em meu canal inserir link do canal ensinando a tocar de maneira fácil e prática.
+          Quero te mostrar que é possível tocar violão sem complicação! Depois de 15 anos tocando resolvi ajudar a quem quiser aprender. Já gravei mais de 2 mil videoaulas em <a className='linkStyle' href='https://www.youtube.com/violaocatolico'>meu canal</a> ensinando a tocar de maneira fácil e prática.
         </p>
       </div>
       <div className='right'>
