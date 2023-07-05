@@ -78,6 +78,10 @@ const ebooks = [
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    min-height: fit-content;
+  }
+
   background-color: ${ Colors.dark };
   display: flex;
   flex-direction: column;
@@ -103,7 +107,6 @@ const SectionStyle = styled.section`
     width: 40%;
     @media (max-width: ${Sizes.mediaQueryBreak1}) {
       width: 90%;
-      margin-top: 90px;
     }
 
     text-align: center;

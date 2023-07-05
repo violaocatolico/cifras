@@ -6,6 +6,11 @@ import { Sizes } from '../utils/sizes'
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 70vh;
+
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    min-height: fit-content;
+  }
+
   background-color: ${ Colors.dark };
   display: flex;
   flex-direction: column;

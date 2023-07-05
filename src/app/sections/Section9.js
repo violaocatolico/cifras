@@ -20,6 +20,7 @@ const SectionStyle = styled.section`
     flex-direction: column;
     justify-content: center;
     padding-left: 8%;
+    padding-right: 8%;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       justify-content: center;
@@ -29,6 +30,10 @@ const SectionStyle = styled.section`
       color: white;
       font-size: ${Sizes.bigFontSize4};
       width: 65%;
+
+      @media (max-width: ${Sizes.mediaQueryBreak2}) {
+        width: 90%;
+      }
     }
 
     p {

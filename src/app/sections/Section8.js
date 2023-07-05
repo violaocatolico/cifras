@@ -9,6 +9,7 @@ const SectionStyle = styled.section`
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   & .sectionLeftRight {
     display: flex;

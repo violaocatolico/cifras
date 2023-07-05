@@ -79,6 +79,11 @@ const RoundedYellowEuQueroButton = styled.a`
   padding: 20px 40px;
   border-radius: 45px;
   width: 30%;
+
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    width: 50%;
+  }
+
   font-weight: bold;
   text-align: center;
 

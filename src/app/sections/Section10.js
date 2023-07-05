@@ -6,6 +6,11 @@ import { Sizes } from '../utils/sizes';
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
+
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    min-height: fit-content;
+  }
+
   background-color: ${ Colors.yellow };
   color: ${ Colors.dark };
   display: flex;
@@ -36,6 +41,12 @@ const SectionStyle = styled.section`
     flex-direction: column;
     justify-content: center;
     padding-left: 8%;
+    padding-right: 8%;
+
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       justify-content: center;
@@ -48,9 +59,18 @@ const SectionStyle = styled.section`
     justify-content: center;
     align-items: center;
     margin-top: 70px;
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      margin-top: 0;
+    }
 
     & img {
       width: 70%;
+
+      @media (max-width: ${Sizes.mediaQueryBreak2}) {
+        width: 95%;
+      }
     }
   }
 `;

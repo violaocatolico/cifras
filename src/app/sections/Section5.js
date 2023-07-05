@@ -6,7 +6,12 @@ import { Sizes } from '../utils/sizes';
 
 const SectionStyle = styled.section`
   width: 100%;
+
   min-height: 90vh;
+  @media (max-width: ${Sizes.mediaQueryBreak2}) {
+    min-height: fit-content;
+  }
+  
   background-color: ${ Colors.dark };
   display: flex;
 
@@ -20,15 +25,23 @@ const SectionStyle = styled.section`
     flex-direction: column;
     justify-content: center;
     padding-left: 8%;
+    padding-right: 8%;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       justify-content: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
 
     .fontTitle {
       color: white;
       font-size: ${Sizes.bigFontSize3};
       width: 65%;
+
+      @media (max-width: ${Sizes.mediaQueryBreak2}) {
+        font-size: 2rem;
+        width: 100%;
+      }
     }
   }
 
@@ -37,7 +50,13 @@ const SectionStyle = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    
     margin-top: 70px;
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      margin-top: 0;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
 
     & img {
       width: 70%;

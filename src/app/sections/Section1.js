@@ -39,6 +39,7 @@ const SectionStyle = styled.section`
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       font-size: ${Sizes.bigFontSize2};
+      line-height: 3.4rem;
     }
 
     @media (max-width: ${Sizes.mediaQueryBreak3}) {
@@ -56,21 +57,36 @@ const SectionStyle = styled.section`
     margin-top: 30px;
     font-size: 20px;
     width: 50%;
+
+    @media (max-width: ${Sizes.mediaQueryBreak3}) {
+      width: 100%;
+    }
   }
 
   & .counter {
+    width: fit-content;
+    @media (max-width: ${Sizes.mediaQueryBreak3}) {
+      width: 100%;
+    }
+
     position: relative;
     background-color: #ffc10d;      
     border-radius: 10px;
-    padding: 5px;
-    width: 30%;
+    padding-top: 10px;
+
+
+    padding-left: 10px;
+    padding-right: 10px;
+    @media (max-width: ${Sizes.mediaQueryBreak3}) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     margin-top: 30px;
     text-align: center;
 
     & .timeContainer {
       display: flex;
-      width: 70%;
-      margin: 0 auto;
     }
 
     & .hours {
@@ -144,7 +160,7 @@ const Section = () => {
 
 
         <div className='counter'>
-            <h4>ÚLTIMAS CHANCES PARA ADQUIRIR COM 50% DE DESCONTO</h4>
+            <h4>Garanta o seu com 50% de desconto</h4>
             <div className='timeContainer'>
               <div className='hours'>
                 <p className='number'>{formatTime(hours)}</p>
