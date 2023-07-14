@@ -66,11 +66,7 @@ const SectionStyle = styled.section`
     }
 
     & img {
-      width: 70%;
-
-      @media (max-width: ${Sizes.mediaQueryBreak2}) {
-        width: 95%;
-      }
+      width: 95%;
     }
   }
 

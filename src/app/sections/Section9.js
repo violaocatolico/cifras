@@ -68,9 +68,12 @@ const Section = () => {
         </p>
         <br />
         <br />
-        <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-          Quero garantir o meu
-        </RoundedYellowEuQueroButton>
+
+        <div class="shake">
+          <RoundedYellowEuQueroButton className="element" href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+            Quero garantir o meu
+          </RoundedYellowEuQueroButton>
+        </div>
       </div>
       <div className='right'>
         <img 

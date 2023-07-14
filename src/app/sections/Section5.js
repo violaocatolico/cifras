@@ -36,11 +36,10 @@ const SectionStyle = styled.section`
     .fontTitle {
       color: white;
       font-size: ${Sizes.bigFontSize3};
-      width: 65%;
+      width: 100%;
 
       @media (max-width: ${Sizes.mediaQueryBreak2}) {
         font-size: 2rem;
-        width: 100%;
       }
     }
   }
@@ -72,9 +71,11 @@ const Section = () => {
           Para quem deseja <span className='yellow'>elevar o nível do ministério</span> de música.
         </h1>
         <br />
-        <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
-          EU QUERO
-        </RoundedYellowEuQueroButton>
+        <div class="shake">
+          <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+            EU QUERO
+          </RoundedYellowEuQueroButton>
+        </div>
       </div>
       <div className='right'>
         <img 

@@ -116,6 +116,7 @@ const Section = () => {
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Cifras corretas em cima das letras</Button>
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Indicação rítmica em cada música</Button>
         <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Dicionário de acordes</Button>
+        <Button href="https://pay.hotmart.com/S63363314B?bid=1649795795717" target="_blank">Músicas sem pestana</Button>
         <ButtonChannel href="https://www.youtube.com/violaocatolico" target="_blank">Vídeo aula de todas as músicas em nosso canal do YouTube</ButtonChannel>
         <RoundedWhatsappButton href='https://wa.me/5538997506385'>
           <div className='iconWhatsapp'></div>
