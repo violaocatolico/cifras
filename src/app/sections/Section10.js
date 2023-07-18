@@ -17,14 +17,18 @@ const SectionStyle = styled.section`
 
   p.fontTitle {
     font-size: medium;
+    font-family: Arial,Helvetica,sans-serif;
   }
 
   h4.fontTitle {
     font-size: 20px;
+    font-family: Arial,Helvetica,sans-serif;
   }
 
   h1.fontTitle {
     font-size: ${Sizes.bigFontSize};
+    font-weight: bold;
+    font-family: Arial,Helvetica,sans-serif;
   }
 
   p {
@@ -40,8 +44,7 @@ const SectionStyle = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 5%;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       padding-top: 40px;
@@ -60,8 +63,8 @@ const SectionStyle = styled.section`
     align-items: center;
     margin-top: 70px;
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
-      padding-top: 40px;
-      padding-bottom: 40px;
+      padding-top: 0;
+      padding-bottom: 10px;
       margin-top: 0;
     }
 

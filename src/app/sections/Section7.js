@@ -71,6 +71,7 @@ const SectionStyle = styled.section`
         margin-top: -50px;
         margin-bottom: 20px;
         background-size: contain;
+        background-repeat: no-repeat;
         background-position: center;
         width: 100px;
         height: 100px;
@@ -118,8 +119,8 @@ const Section = () => {
         <div className='feedback'>
           <div className='userImage userImage4'></div>
           <p className='depoiment'>
-            Olá Márcio, tudo bem? Encontrei você no YouTube agora e gostei do seu trabalho. Estava procurando uma aula de violão para a música Corpo Santo da Fátima Souza. Sua didática é muito boa. Eu já tentei aprender tocar violão mas sempre me enrolo e não vou pra frente. 
-            Vou tentar novamente com a sua didática. Acabei de comprar seus ebooks e também achei super organizado. 
+            "Olá Márcio, tudo bem? Encontrei você no YouTube agora e gostei do seu trabalho. Estava procurando uma aula de violão para a música Corpo Santo da Fátima Souza. Sua didática é muito boa. Eu já tentei aprender tocar violão mas sempre me enrolo e não vou pra frente. 
+            Vou tentar novamente com a sua didática. Acabei de comprar seus ebooks e também achei super organizado."
           </p>
           <p className='namePeople'>- Camila -</p>
         </div>

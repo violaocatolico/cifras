@@ -64,6 +64,14 @@ const SectionStyle = styled.section`
   }
 
   & .counter {
+    display: inline-block;
+    text-decoration: none;
+    color: ${Colors.black};
+    transition: transform .1s;
+    &:hover {
+      transform: scale(1.1);
+    }
+
     width: fit-content;
     @media (max-width: ${Sizes.mediaQueryBreak3}) {
       width: 100%;
@@ -159,7 +167,7 @@ const Section = () => {
         <p className='white moreThan13Ebooks'>São <span className='yellow'>13 e-books!</span> Mais de 500 cifras de todos os tempos litúrgicos na palma da sua mão!</p>
 
 
-        <div className='counter'>
+        <a href='https://pay.hotmart.com/S63363314B?bid=1649795795717' className='counter'>
             <h4>Garanta o seu com 50% de desconto</h4>
             <div className='timeContainer'>
               <div className='hours'>
@@ -175,7 +183,7 @@ const Section = () => {
                 <p className='hoursName'>Segundos</p>
               </div>                                                                                                                                                                                                                                                                 
             </div>
-          </div>
+          </a>
 
       </div>
     </SectionStyle>

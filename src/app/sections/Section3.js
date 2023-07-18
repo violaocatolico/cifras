@@ -70,7 +70,7 @@ const ebooks = [
 
   {
     title: 'Músicas católicas para as crianças',
-    link: 'https://drive.google.com/file/d/1_GTamsgU96X89E-19EAQ0bWwO2GcR7pY/view?usp=sharing',
+    link: 'https://pay.hotmart.com/L68308906S',
     image: '11.png',
   },
 ]
@@ -241,7 +241,7 @@ font-size: 100px;
 const Section = (props) => {
   return (
     <SectionStyle>
-        <h3 className='fontTitle'>Se preferir, <span className='yellow'>pode adquirir</span> o seu preferido <span className='yellow'>individualmente</span></h3>
+        <h3 className='fontTitle'>Se preferir, pode adquirir o seu preferido <span className='yellow'>individualmente</span></h3>
 
         <div className='ebooksList'>
           { ebooks.map((ebook, index) => (

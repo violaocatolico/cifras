@@ -26,6 +26,7 @@ const SectionStyle = styled.section`
     justify-content: center;
     padding-left: 8%;
     padding-right: 8%;
+    align-items: center;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       justify-content: center;
@@ -37,6 +38,7 @@ const SectionStyle = styled.section`
       color: white;
       font-size: ${Sizes.bigFontSize3};
       width: 100%;
+      text-align: center;
 
       @media (max-width: ${Sizes.mediaQueryBreak2}) {
         font-size: 2rem;
@@ -68,10 +70,12 @@ const Section = () => {
     <SectionStyle>
       <div className='left'>        
         <h1 className='fontTitle'>
-          Para quem deseja <span className='yellow'>elevar o nível do ministério</span> de música.
+          Para quem deseja <span className='yellow'>elevar o nível do ministério</span> de música
         </h1>
         <br />
-        <div class="shake">
+        <br />
+        <br />
+        <div className="shake">
           <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
             EU QUERO
           </RoundedYellowEuQueroButton>

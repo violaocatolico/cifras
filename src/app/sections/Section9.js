@@ -21,6 +21,7 @@ const SectionStyle = styled.section`
     justify-content: center;
     padding-left: 8%;
     padding-right: 8%;
+    text-align: center;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       justify-content: center;
@@ -69,7 +70,7 @@ const Section = () => {
         <br />
         <br />
 
-        <div class="shake">
+        <div className="shake">
           <RoundedYellowEuQueroButton className="element" href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
             Quero garantir o meu
           </RoundedYellowEuQueroButton>
