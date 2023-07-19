@@ -30,7 +30,7 @@ const SectionStyle = styled.section`
     .fontTitle {
       color: white;
       font-size: ${Sizes.bigFontSize4};
-      width: 65%;
+      width: 100%;
 
       @media (max-width: ${Sizes.mediaQueryBreak2}) {
         width: 90%;

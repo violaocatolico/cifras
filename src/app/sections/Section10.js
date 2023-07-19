@@ -70,6 +70,11 @@ const SectionStyle = styled.section`
 
     & img {
       width: 95%;
+      transition: transform .1s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -91,7 +96,9 @@ const Section = () => {
         </p>
       </div>
       <div className='right'>
-        <img src='channel.png' alt='Cifras para todos os momentos e tempos litúrgicos' />
+        <a href='https://www.youtube.com/violaocatolico' target='_blank'>
+          <img src='channel.png' alt='Cifras para todos os momentos e tempos litúrgicos' />
+        </a>
       </div>
     </SectionStyle>
   );
