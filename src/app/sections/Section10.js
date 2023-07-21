@@ -45,6 +45,7 @@ const SectionStyle = styled.section`
     flex-direction: column;
     justify-content: center;
     padding-left: 5%;
+    padding-right: 5%;
 
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       padding-top: 40px;
@@ -67,6 +68,13 @@ const SectionStyle = styled.section`
       padding-bottom: 10px;
       margin-top: 0;
     }
+
+
+    & .imgContainer {
+      display: flex;
+      justify-content: center;
+    }
+
 
     & img {
       width: 95%;
@@ -96,7 +104,7 @@ const Section = () => {
         </p>
       </div>
       <div className='right'>
-        <a href='https://www.youtube.com/violaocatolico' target='_blank'>
+        <a className='imgContainer' href='https://www.youtube.com/violaocatolico' target='_blank'>
           <img src='channel.png' alt='Cifras para todos os momentos e tempos litúrgicos' />
         </a>
       </div>

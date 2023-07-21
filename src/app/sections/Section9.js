@@ -42,6 +42,15 @@ const SectionStyle = styled.section`
       font-size: 20px;
       color: white;
     }
+
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      & .shake {
+        display: flex;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        justify-content: center;
+      }
+    }
   }
 
   & .right {
@@ -49,7 +58,12 @@ const SectionStyle = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    
     margin-top: 70px;
+    @media (max-width: ${Sizes.mediaQueryBreak2}) {
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
 
     & img {
       width: 70%;
@@ -67,8 +81,6 @@ const Section = () => {
         <p>
           Seja responsável por esta mudança, aprenda a tocar em todas as situações, em todos os tempos litúrgicos, em todos os momentos da Santa Missa! Aproveita a oportunidade única de levar todos os meus e-books pela metade do preço!
         </p>
-        <br />
-        <br />
 
         <div className="shake">
           <RoundedYellowEuQueroButton className="element" href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
