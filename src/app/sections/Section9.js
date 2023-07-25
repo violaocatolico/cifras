@@ -43,6 +43,10 @@ const SectionStyle = styled.section`
       color: white;
     }
 
+    & .shake {
+      margin-top: 50px;
+    }
+
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       & .shake {
         display: flex;
