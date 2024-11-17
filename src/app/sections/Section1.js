@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components'
-import { Sizes } from '../utils/sizes';
-import { Colors } from '../utils/colors';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { Sizes } from "../utils/sizes";
+import { Colors } from "../utils/colors";
 
 const SectionStyle = styled.section`
+  @media (max-width: ${Sizes.mediaQueryBreak1}) {
+    padding-top: 0;
+  }
+  padding-top: 100px;
   width: 100%;
   min-height: 90vh;
-  background-image: url('imageSection1.webp');
+  background-image: url("imageSection1.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -17,13 +21,13 @@ const SectionStyle = styled.section`
 
   & .gradientBg {
     width: 100%;
-    height: 100vh;
+    height: 200vh;
     background: ${Colors.dark};
-    background: linear-gradient(90deg,#141414 0%,#14141400 50%);
+    background: linear-gradient(90deg, #141414 0%, #14141400 50%);
     position: absolute;
     top: 0;
   }
-  
+
   & .sectionText {
     position: relative;
     width: 75%;
@@ -33,10 +37,19 @@ const SectionStyle = styled.section`
     }
 
     & .videoContainer {
-      margin-top: 50px;
-      margin-bottom: 50px;
       display: flex;
       justify-content: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      iframe {
+        @media (max-width: ${Sizes.mediaQueryBreak1}) {
+          width: 100%;
+        }
+
+        width: 70%;
+        aspect-ratio: 16 / 9;
+      }
     }
   }
 
@@ -58,7 +71,9 @@ const SectionStyle = styled.section`
     }
   }
 
-  & h2 { margin-top: 25px; }
+  & h2 {
+    margin-top: 25px;
+  }
 
   & .moreThan13Ebooks {
     margin-top: 30px;
@@ -74,7 +89,7 @@ const SectionStyle = styled.section`
     display: inline-block;
     text-decoration: none;
     color: ${Colors.black};
-    transition: transform .1s;
+    transition: transform 0.1s;
     &:hover {
       transform: scale(1.1);
     }
@@ -85,10 +100,9 @@ const SectionStyle = styled.section`
     }
 
     position: relative;
-    background-color: #ffc10d;      
+    background-color: #ffc10d;
     border-radius: 10px;
     padding-top: 10px;
-
 
     padding-left: 10px;
     padding-right: 10px;
@@ -107,8 +121,8 @@ const SectionStyle = styled.section`
     & .hours {
       flex: 1;
       background-color: #745b13;
-      border-radius: 5px;   
-      box-shadow: 0px 9px 18px -4px rgba(0,0,0,0.62);
+      border-radius: 5px;
+      box-shadow: 0px 9px 18px -4px rgba(0, 0, 0, 0.62);
       margin: 20px 10px;
     }
 
@@ -157,32 +171,41 @@ const Section = () => {
   }, [seconds, minutes, hours]);
 
   const formatTime = (value) => {
-    return value.toString().padStart(2, '0');
+    return value.toString().padStart(2, "0");
   };
 
   return (
     <SectionStyle>
-      <div className='gradientBg'></div>
-      <div className='sectionText'>
+      <div className="gradientBg"></div>
+      <div className="sectionText">
         <h1>
-          <div className='yellow fontTitle'>Cifras católicas</div>
-          <div className='white fontTitle'>para momentos</div>
-          <div className='white fontTitle'><span className='yellow'>sagrados</span> na igreja</div>
+          <div className="yellow fontTitle">Cifras católicas</div>
+          <div className="white fontTitle">para momentos</div>
+          <div className="white fontTitle">
+            <span className="yellow">sagrados</span> na igreja
+          </div>
         </h1>
 
-        <h2 className='yellow fontTitle'>Especial 13 em 1</h2>
-        <p className='white moreThan13Ebooks'>São <span className='yellow'>13 e-books!</span> Mais de 500 cifras de todos os tempos litúrgicos na palma da sua mão!</p>
-
+        <h2 className="yellow fontTitle">Especial 13 em 1</h2>
+        <p className="white moreThan13Ebooks">
+          São <span className="yellow">13 e-books!</span> Mais de 500 cifras de
+          todos os tempos litúrgicos na palma da sua mão!
+        </p>
 
         {/* Vídeo do youtube no centro */}
-        <div className='videoContainer'>
-          <iframe width="70%" height="500" src="https://www.youtube.com/embed/GNiS6kEaEYk?si=sFXZ2taZRy_3oXvJ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div className="videoContainer">
+          <iframe
+            src="https://www.youtube.com/embed/_HjFma8CWHI?si=X5aQTJAeNf4mAxp_&amp;controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        
-
       </div>
     </SectionStyle>
   );
-}
+};
 
 export default Section;
