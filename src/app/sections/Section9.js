@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import  { RoundedYellowEuQueroButton } from './Components';
-import { Colors } from '../utils/colors';
-import { Sizes } from '../utils/sizes';
+import React from "react";
+import styled from "styled-components";
+import { RoundedYellowEuQueroButton } from "./Components";
+import { Colors } from "../utils/colors";
+import { Sizes } from "../utils/sizes";
 
 const SectionStyle = styled.section`
   width: 100%;
   min-height: 90vh;
-  background-color: ${ Colors.dark };
+  background-color: ${Colors.dark};
   display: flex;
 
   @media (max-width: ${Sizes.mediaQueryBreak2}) {
@@ -62,7 +62,7 @@ const SectionStyle = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     margin-top: 70px;
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       margin-top: 0;
@@ -78,28 +78,34 @@ const SectionStyle = styled.section`
 const Section = () => {
   return (
     <SectionStyle>
-      <div className='left'>        
-        <h1 className='fontTitle'>
+      <div className="left">
+        <h1 className="fontTitle">
           Através da música os momentos na igreja podem ganhar outro patamar.
         </h1>
         <p>
-          Seja responsável por esta mudança, aprenda a tocar em todas as situações, em todos os tempos litúrgicos, em todos os momentos da Santa Missa! Aproveita a oportunidade única de levar todos os meus e-books pela metade do preço!
+          Seja responsável por esta mudança, aprenda a tocar em todas as
+          situações, em todos os tempos litúrgicos, em todos os momentos da
+          Santa Missa! Aproveita a oportunidade única de levar todos os meus
+          e-books pela metade do preço!
         </p>
 
         <div className="shake">
-          <RoundedYellowEuQueroButton className="element" href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+          <RoundedYellowEuQueroButton
+            className="element"
+            href="https://pay.hotmart.com/S63363314B?off=2iq0ibql&checkoutMode=10"
+          >
             Quero garantir o meu
           </RoundedYellowEuQueroButton>
         </div>
       </div>
-      <div className='right'>
-        <img 
-          src='hostia.png' 
-          alt='Cifras para todos os momentos e tempos litúrgicos' 
-        />        
+      <div className="right">
+        <img
+          src="hostia.png"
+          alt="Cifras para todos os momentos e tempos litúrgicos"
+        />
       </div>
     </SectionStyle>
   );
-}
+};
 
-export default Section;  
+export default Section;

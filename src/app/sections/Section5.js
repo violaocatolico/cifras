@@ -89,16 +89,21 @@ const Section = () => {
         <br />
         <br />
         <div className="shake">
-          <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?bid=1649795795717">
+          <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?off=2iq0ibql&checkoutMode=10">
             EU QUERO
           </RoundedYellowEuQueroButton>
         </div>
       </div>
       <div className="right">
-        <img
-          src="imageSection5.webp"
-          alt="Cifras para todos os momentos e tempos litúrgicos"
-        />
+        <a
+          href="https://pay.hotmart.com/S63363314B?off=2iq0ibql&checkoutMode=10"
+          target="_blank"
+        >
+          <img
+            src="imageSection5.webp"
+            alt="Cifras para todos os momentos e tempos litúrgicos"
+          />
+        </a>
       </div>
     </SectionStyle>
   );
