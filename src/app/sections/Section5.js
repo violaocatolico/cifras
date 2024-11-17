@@ -64,6 +64,11 @@ const SectionStyle = styled.section`
     justify-content: center;
     align-items: center;
 
+    a {
+      display: flex;
+      justify-content: center;
+    }
+
     margin-top: 70px;
     @media (max-width: ${Sizes.mediaQueryBreak2}) {
       margin-top: 0;
