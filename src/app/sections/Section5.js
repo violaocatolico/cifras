@@ -44,6 +44,16 @@ const SectionStyle = styled.section`
         font-size: 2rem;
       }
     }
+
+    .shake > a {
+      @media (min-width: ${Sizes.mediaQueryBreak2}) {
+        width: 100%;
+        display: flex;
+        min-height: 40px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 
   & .right {

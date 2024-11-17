@@ -56,8 +56,8 @@ const Section = () => {
     
       <img src='ebook-free.png' alt='Músicas catolicas extras' />
 
-      <RoundedBlackButton target="_blank" href="https://drive.google.com/file/d/1Q37l_Mnks5YjPLEmFYJujVmH7g2_JzQI/view?usp=sharing">
-        Download grátis
+      <RoundedBlackButton target="_blank" href="https://wa.link/1aetwp">
+        Peça grátis
       </RoundedBlackButton>
     </SectionStyle>
   );

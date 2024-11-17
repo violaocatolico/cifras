@@ -17,7 +17,7 @@ const SectionStyle = styled.section`
 
   & .gradientBg {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background: ${Colors.dark};
     background: linear-gradient(90deg,#141414 0%,#14141400 50%);
     position: absolute;
@@ -30,6 +30,13 @@ const SectionStyle = styled.section`
 
     @media (max-width: ${Sizes.mediaQueryBreak1}) {
       width: 95%;
+    }
+
+    & .videoContainer {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -167,23 +174,11 @@ const Section = () => {
         <p className='white moreThan13Ebooks'>São <span className='yellow'>13 e-books!</span> Mais de 500 cifras de todos os tempos litúrgicos na palma da sua mão!</p>
 
 
-        <a href='https://pay.hotmart.com/S63363314B?bid=1649795795717' className='counter'>
-            <h4>Garanta o seu com 50% de desconto</h4>
-            <div className='timeContainer'>
-              <div className='hours'>
-                <p className='number'>{formatTime(hours)}</p>
-                <p className='hoursName'>Horas</p>
-              </div>
-              <div className='hours'>
-                <p className='number'>{formatTime(minutes)}</p>
-                <p className='hoursName'>Minutos</p>
-              </div>
-              <div className='hours'>
-                <p className='number'>{formatTime(seconds)}</p>
-                <p className='hoursName'>Segundos</p>
-              </div>                                                                                                                                                                                                                                                                 
-            </div>
-          </a>
+        {/* Vídeo do youtube no centro */}
+        <div className='videoContainer'>
+          <iframe width="70%" height="500" src="https://www.youtube.com/embed/GNiS6kEaEYk?si=sFXZ2taZRy_3oXvJ&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        
 
       </div>
     </SectionStyle>
