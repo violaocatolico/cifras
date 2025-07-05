@@ -92,7 +92,7 @@ const Section = () => {
         <div className="shake">
           <RoundedYellowEuQueroButton
             className="element"
-            href=href="https://pay.hotmart.com/L100663424T"
+            href="https://pay.hotmart.com/L100663424T"
           >
             Quero garantir o meu
           </RoundedYellowEuQueroButton>
