@@ -12,7 +12,7 @@ const ebooks = [
   },
   {
     title: 'Músicas católicas para o natal',
-    link: 'https://pay.hotmart.com/M65986370I?bid=1664980014817',
+    link: 'https://pay.hotmart.com/L100663826N',
     image: 'musicasNatal.png',
   },
   {
