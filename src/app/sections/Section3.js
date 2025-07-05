@@ -7,7 +7,7 @@ import { Sizes } from '../utils/sizes'
 const ebooks = [
   {
     title: 'Músicas católicas para advento e natal',
-    link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
+    link: 'https://pay.hotmart.com/S100663772R',
     image: 'musicasAdvento.png',
   },
   {
