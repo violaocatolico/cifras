@@ -94,7 +94,7 @@ const Section = () => {
         <br />
         <br />
         <div className="shake">
-          <RoundedYellowEuQueroButton href="https://pay.hotmart.com/S63363314B?off=2iq0ibql&checkoutMode=10">
+          <RoundedYellowEuQueroButton href="https://loja.infinitepay.io/violaocatolico/jla7402-grande-e-book-13-em-1">
             EU QUERO
           </RoundedYellowEuQueroButton>
         </div>

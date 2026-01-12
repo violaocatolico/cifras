@@ -7,70 +7,70 @@ import { Sizes } from '../utils/sizes'
 const ebooks = [
   {
     title: 'Músicas católicas para advento e natal',
-    link: 'https://pay.hotmart.com/N62353886T?bid=1649784419701',
+    link: 'https://loja.infinitepay.io/violaocatolico/adx4832-e-book-tempo-do-advento',
     image: 'musicasAdvento.png',
   },
   {
     title: 'Músicas católicas para o natal',
-    link: 'https://pay.hotmart.com/M65986370I?bid=1664980014817',
+    link: 'https://loja.infinitepay.io/violaocatolico/wbk8312-e-book-tempo-do-natal',
     image: 'musicasNatal.png',
   },
   {
     title: 'Músicas católicas para a quaresma',
-    link: 'https://pay.hotmart.com/P68319360J?bid=1649784445020',
+    link: 'https://loja.infinitepay.io/violaocatolico/vam5529-e-book-tempo-da-quaresma',
     image: '2.png',
   },
   {
     title: 'Músicas católicas para a páscoa',
-    link: 'https://pay.hotmart.com/A67803816O?bid=1649784461481',
+    link: 'https://loja.infinitepay.io/violaocatolico/bpl0067-e-book-tempo-pascal',
     image: '3.png',
   },
 
   {
     title: 'Músicas católicas para o tempo comum',
-    link: 'https://pay.hotmart.com/S64580532H?bid=1649784479849',
+    link: 'https://loja.infinitepay.io/violaocatolico/vsp3805-e-book-tempo-comum',
     image: '4.png',
   },
 
   {
     title: 'Músicas católicas para as partes fixas',
-    link: 'https://pay.hotmart.com/G68474939T?bid=1649784495138',
+    link: 'https://loja.infinitepay.io/violaocatolico/nwp8953-e-book-partes-fixas',
     image: '5.png',
   },
 
   {
     title: 'Músicas católicas marianas',
-    link: 'https://pay.hotmart.com/J60244445K?bid=1649784521066',
+    link: 'https://loja.infinitepay.io/violaocatolico/aim9272-e-book-musicas-marianas',
     image: '6.png',
   },
 
   {
     title: 'Músicas católicas para adoração',
-    link: 'https://pay.hotmart.com/A61419780H?bid=1660538952946',
+    link: 'https://loja.infinitepay.io/violaocatolico/whz6015-e-book-musicas-para-adoracao',
     image: '7.png',
   },
 
   {
     title: 'Músicas católicas mais conhecidas',
-    link: 'https://pay.hotmart.com/X58232470X?bid=1649784567789',
+    link: 'https://loja.infinitepay.io/violaocatolico/ctn6553-e-book-musicas-mais-conhecidas',
     image: '8.png',
   },
 
   {
     title: 'Músicas católicas para grupo de oração',
-    link: 'https://pay.hotmart.com/W66899425V?bid=1649784602055',
+    link: 'https://loja.infinitepay.io/violaocatolico/xiz9104-e-book-musicas-para-grupo-de-oracao',
     image: '9.png',
   },
 
   {
     title: 'Músicas católicas que nos marcaram',
-    link: 'https://pay.hotmart.com/L63950078A?bid=1649784617630',
+    link: 'https://loja.infinitepay.io/violaocatolico/fvd9543-e-book-musicas-que-nos-marcaram',
     image: '10.png',
   },
 
   {
     title: 'Músicas católicas para as crianças',
-    link: 'https://pay.hotmart.com/L68308906S',
+    link: 'https://loja.infinitepay.io/violaocatolico/qrl3312-e-book-musicas-infantis',
     image: '11.png',
   },
 ]
